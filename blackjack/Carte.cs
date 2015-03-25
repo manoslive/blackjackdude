@@ -11,12 +11,14 @@ namespace blackjack
         // Attributs
         public titre _valeur;
         public type _type;
+        public string _urlCarte;
 
         // Constructeur paramétrique
         public Carte(int valeur, int type)
         {
             _valeur = (titre)valeur;
             _type = (type)type;
+            _urlCarte = getURLCarte();
         }
 
         // Titre
@@ -47,14 +49,8 @@ namespace blackjack
         }
         private string getURLCarte()
         {
-            string url = null;
-            switch(_valeur)
-            {
-                case titre.As:
-                    url = _valeur + getTypeUrlChunk(_type);
-                    break;
-            }
-            return url + ".png";
+            string dossier = "~/PaquetDeCartes/", typeImage = ".png";
+            return dossier + (int)_valeur + getTypeUrlChunk(_type) + typeImage;
         }
         private string getTypeUrlChunk(type leType)
         {
