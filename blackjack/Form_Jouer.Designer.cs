@@ -41,14 +41,10 @@
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.BTN_AfficherJournalJ1 = new System.Windows.Forms.Button();
             this.BTN_AfficherJournalJ2 = new System.Windows.Forms.Button();
-            this.PB_PlayJ1 = new System.Windows.Forms.PictureBox();
+            this.flashButton1 = new FlashButton.FlashButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PB_PlayJ2 = new System.Windows.Forms.PictureBox();
-            this.GB_OptionJoueur2.SuspendLayout();
             this.GB_OptionJoueur1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_PlayJ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_PlayJ2)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Joueur1
@@ -105,7 +101,6 @@
             // 
             // GB_OptionJoueur2
             // 
-            this.GB_OptionJoueur2.Controls.Add(this.PB_PlayJ2);
             this.GB_OptionJoueur2.Location = new System.Drawing.Point(510, 323);
             this.GB_OptionJoueur2.Name = "GB_OptionJoueur2";
             this.GB_OptionJoueur2.Size = new System.Drawing.Size(282, 142);
@@ -115,7 +110,7 @@
             // 
             // GB_OptionJoueur1
             // 
-            this.GB_OptionJoueur1.Controls.Add(this.PB_PlayJ1);
+            this.GB_OptionJoueur1.Controls.Add(this.flashButton1);
             this.GB_OptionJoueur1.Location = new System.Drawing.Point(69, 323);
             this.GB_OptionJoueur1.Name = "GB_OptionJoueur1";
             this.GB_OptionJoueur1.Size = new System.Drawing.Size(282, 142);
@@ -159,7 +154,6 @@
             this.BTN_AfficherJournalJ1.TabIndex = 5;
             this.BTN_AfficherJournalJ1.Text = "Journal J1";
             this.BTN_AfficherJournalJ1.UseVisualStyleBackColor = true;
-            this.BTN_AfficherJournalJ1.Click += new System.EventHandler(this.BTN_Quitter_Click);
             // 
             // BTN_AfficherJournalJ2
             // 
@@ -169,17 +163,19 @@
             this.BTN_AfficherJournalJ2.TabIndex = 5;
             this.BTN_AfficherJournalJ2.Text = "Journal J2";
             this.BTN_AfficherJournalJ2.UseVisualStyleBackColor = true;
-            this.BTN_AfficherJournalJ2.Click += new System.EventHandler(this.BTN_Quitter_Click);
             // 
-            // PB_PlayJ1
+            // flashButton1
             // 
-            this.PB_PlayJ1.Image = global::blackjack.Properties.Resources.jouer_default;
-            this.PB_PlayJ1.Location = new System.Drawing.Point(19, 38);
-            this.PB_PlayJ1.Name = "PB_PlayJ1";
-            this.PB_PlayJ1.Size = new System.Drawing.Size(78, 78);
-            this.PB_PlayJ1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_PlayJ1.TabIndex = 0;
-            this.PB_PlayJ1.TabStop = false;
+            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton1.ImageClick = null;
+            this.flashButton1.ImageDisable = null;
+            this.flashButton1.ImageNeutral = global::blackjack.Properties.Resources.jouer_default;
+            this.flashButton1.ImageOver = null;
+            this.flashButton1.Location = new System.Drawing.Point(16, 27);
+            this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flashButton1.Name = "flashButton1";
+            this.flashButton1.Size = new System.Drawing.Size(87, 87);
+            this.flashButton1.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -190,16 +186,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // PB_PlayJ2
-            // 
-            this.PB_PlayJ2.Image = global::blackjack.Properties.Resources.jouer_default;
-            this.PB_PlayJ2.Location = new System.Drawing.Point(18, 38);
-            this.PB_PlayJ2.Name = "PB_PlayJ2";
-            this.PB_PlayJ2.Size = new System.Drawing.Size(78, 78);
-            this.PB_PlayJ2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_PlayJ2.TabIndex = 0;
-            this.PB_PlayJ2.TabStop = false;
             // 
             // Form_Jouer
             // 
@@ -222,11 +208,8 @@
             this.Controls.Add(this.LB_Joueur1);
             this.Name = "Form_Jouer";
             this.Text = "Form_Jouer";
-            this.GB_OptionJoueur2.ResumeLayout(false);
             this.GB_OptionJoueur1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PB_PlayJ1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_PlayJ2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,12 +226,11 @@
         private System.Windows.Forms.Label LB_PointageJ2;
         private System.Windows.Forms.GroupBox GB_OptionJoueur2;
         private System.Windows.Forms.GroupBox GB_OptionJoueur1;
-        private System.Windows.Forms.PictureBox PB_PlayJ1;
         private System.Windows.Forms.Button BTN_Quitter;
         private System.Windows.Forms.Button BTN_Rejouer;
         private System.Windows.Forms.Button BTN_Annuler;
         private System.Windows.Forms.Button BTN_AfficherJournalJ1;
         private System.Windows.Forms.Button BTN_AfficherJournalJ2;
-        private System.Windows.Forms.PictureBox PB_PlayJ2;
+        private FlashButton.FlashButton flashButton1;
     }
 }

@@ -72,7 +72,9 @@ namespace blackjack
 
         private void BTN_Jouer_Click(object sender, EventArgs e)
         {
-            
+            Form_Jouer jouer = new Form_Jouer();
+            this.Hide();
+            jouer.ShowDialog();
         }
 
         private void CB_J1_Comptage_CheckedChanged(object sender, EventArgs e)
