@@ -16,10 +16,10 @@ namespace blackjack
             //string str = string.Empty;
             //str = lst.OrderBy(xx => rnd.Next()).First();
             //return str;
-            Paquet.Add("ace_of_clubs");
-            Paquet.Add("ace_of_diamonds");
-            Paquet.Add("ace_of_hearts");
-            Paquet.Add("ace_of_spades");
+            Paquet.Add("1_of_clubs");
+            Paquet.Add("1_of_diamonds");
+            Paquet.Add("1_of_hearts");
+            Paquet.Add("1_of_spades");
             Paquet.Add("2_of_clubs");
             Paquet.Add("2_of_diamonds");
             Paquet.Add("2_of_hearts");
