@@ -13,9 +13,6 @@ namespace blackjack
 
         public PaquetCartes()
         {
-            //string str = string.Empty;
-            //str = lst.OrderBy(xx => rnd.Next()).First();
-            //return str;
             Paquet.Add(new Carte(1, 1));
             Paquet.Add(new Carte(1, 2));
             Paquet.Add(new Carte(1, 3));
@@ -68,6 +65,12 @@ namespace blackjack
             Paquet.Add(new Carte(13, 2));
             Paquet.Add(new Carte(13, 3));
             Paquet.Add(new Carte(13, 4));
+        }
+        public string PigerCarte()
+        {
+            string laCarte = string.Empty;
+            //laCarte = Paquet[rnd.Next(0,52)].GetCarte();
+            return laCarte;
         }
     }
 }
