@@ -11,7 +11,8 @@ namespace blackjack
         public static Random rnd = new Random();
         public List<Carte> Paquet = new List<Carte>();
 
-        // Lors de sa création, le paquet se voit attribué 52 cartes
+        // Lors de sa création, le paquet se voit attribué 
+        // 52 cartes différentes (sans les jokers)
         public PaquetCartes()
         {
             CreerPaquet();
@@ -70,9 +71,12 @@ namespace blackjack
         }
         private void CreerPaquet()
         {
-            for (int i = 0; i < 4; i++)
+            const int NBTYPECARTES = 4;
+            const int NBCARTESPARTYPE = 13;
+
+            for (int i = 0; i < NBTYPECARTES; i++)
             {
-                for (int j = 0; j < 13; j++)
+                for (int j = 0; j < NBCARTESPARTYPE; j++)
                 {
                     Paquet.Add(new Carte(j, i));
                 }
