@@ -69,7 +69,8 @@ namespace blackjack
         public string PigerCarte()
         {
             string laCarte = string.Empty;
-            //laCarte = Paquet[rnd.Next(0,52)].GetCarte();
+            int rndCarte = rnd.Next(0, 52);
+            //laCarte = Paquet[rndCarte].GetCarte();
             return laCarte;
         }
     }
