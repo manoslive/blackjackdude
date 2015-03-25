@@ -12,12 +12,13 @@ namespace blackjack
         private List<Carte> Paquet = new List<Carte>();
         private int cartePigé; //contient le numéro de la dernière carte pigé de la liste Paquet
 
-        // Lors de sa création, le paquet se voit attribué 
-        // 52 cartes différentes (sans les jokers)
+        // Constructeur
         public PaquetCartes()
         {
             CreerPaquet();
         }
+        // Lors de sa création, le paquet se voit attribué 
+        // 52 cartes différentes (sans les jokers)
         private void CreerPaquet()
         {
             const int NBTYPECARTES = 4;
@@ -31,12 +32,14 @@ namespace blackjack
                 }
             }
         }
+        // Pige une carte dans le paquet
         public string PigerCarte()
         {
             cartePigé = rnd.Next(0, 52);
             string laCarte = Paquet[cartePigé].getURLCarte();
             return laCarte;
         }
+        // Obtient le numéro de la dernière carte pigée
         public int GetValeur()
         {
             return Paquet[cartePigé].getValeurCarte();
