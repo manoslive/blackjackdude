@@ -16,5 +16,10 @@ namespace blackjack
         {
             InitializeComponent();
         }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
