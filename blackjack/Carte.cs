@@ -47,11 +47,13 @@ namespace blackjack
 
             return resultat;
         }
+        // Obtient l'url complet de l'image de la carte
         private string getURLCarte()
         {
             string dossier = "~/PaquetDeCartes/", typeImage = ".png";
             return dossier + (int)_valeur + getTypeUrlChunk(_type) + typeImage;
         }
+        // Obtient une partie de l'url selon le type
         private string getTypeUrlChunk(type leType)
         {
             string urlchunk = null;
