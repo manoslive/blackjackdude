@@ -58,6 +58,7 @@
       <DependentUpon>Form_Jouer.cs</DependentUpon>
     </Compile>
     <Compile Include="Joueur.cs" />
+    <Compile Include="PaquetCartes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Choix.resx">
