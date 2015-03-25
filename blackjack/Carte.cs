@@ -32,7 +32,7 @@ namespace blackjack
             Trèfle=1 , Pique=2, Coeur=3, Carreau=4
         }
         // Obtient la valeur numérique de la carte
-        private int getValeurCarte()
+        public int getValeurCarte()
         {
             const int FIGURES = 10;
             const int AS = 11; // Il faudrait voir comment choisir entre 1 et 11 ////////////////////////////////
@@ -48,7 +48,7 @@ namespace blackjack
             return resultat;
         }
         // Obtient l'url complet de l'image de la carte
-        private string getURLCarte()
+        public string getURLCarte()
         {
             string dossier = "~/PaquetDeCartes/", typeImage = ".png";
             return dossier + (int)_valeur + getTypeUrlChunk(_type) + typeImage;
