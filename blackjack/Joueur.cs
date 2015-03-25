@@ -18,6 +18,7 @@ namespace blackjack
         public bool _AFini { get; set; }
         public List<String> _journal { get; set; }
 
+        // Constructeur sans paramètre
         public Joueur()
         {
             _comptage = false;
@@ -25,12 +26,14 @@ namespace blackjack
             _AFini = false;
             _journal = new List<string>();
         }
+        // Constructeur avec paramètres
         public Joueur(niveauIA niveau, bool comptage)
         {
             _estIA = true;
             _niveauIA = niveau;
             _comptage = comptage;
         }
+        // Vérifie selon le niveau de l'IA s'il peut piger une carte
         public bool PigeCarte(double possibiliteDeNePasBuster)
         {
             if (possibiliteDeNePasBuster >= ((double)_niveauIA) / 100.0)
@@ -38,7 +41,11 @@ namespace blackjack
             else
                 return false;
         }
-        public void AjouterAuJournal(int nbBonnesCartes, double possibiliteDeNePasBuster)
+        public void AjouterAuJournal(string message)
+        {
+            _journal.Add(message);
+        }
+        public void AjouterAuJournalConcatenate(int nbBonnesCartes, double possibiliteDeNePasBuster)
         {
             string message = "Mon pointage est de ";
             _journal.Add(message);
