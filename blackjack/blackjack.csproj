@@ -51,11 +51,20 @@
     <Compile Include="Form_Choix.Designer.cs">
       <DependentUpon>Form_Choix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Jouer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Jouer.Designer.cs">
+      <DependentUpon>Form_Jouer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Joueur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Choix.resx">
       <DependentUpon>Form_Choix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Jouer.resx">
+      <DependentUpon>Form_Jouer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
