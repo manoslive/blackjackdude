@@ -27,7 +27,7 @@ namespace blackjack
         // Valeur
         public enum type
         {
-            Trèfle, Pique, Coeur, Carreau
+            Trèfle=1 , Pique=2, Coeur=3, Carreau=4
         }
         // Obtient la valeur numérique de la carte
         private int getValeurCarte()
@@ -44,6 +44,37 @@ namespace blackjack
                 resultat = (int)_valeur;
 
             return resultat;
+        }
+        private string getURLCarte()
+        {
+            string url = null;
+            switch(_valeur)
+            {
+                case titre.As:
+                    url = _valeur + getTypeUrlChunk(_type);
+                    break;
+            }
+            return url + ".png";
+        }
+        private string getTypeUrlChunk(type leType)
+        {
+            string urlchunk = null;
+            switch(_type)
+            {
+                case type.Carreau:
+                    urlchunk = "_of_diamonds";
+                    break;
+                case type.Coeur:
+                    urlchunk = "_of_hearts";
+                    break;
+                case type.Pique:
+                    urlchunk = "_of_spades";
+                    break;
+                case type.Trèfle:
+                    urlchunk = "_of_clubs";
+                    break;
+            }
+            return urlchunk;
         }
     }
 }
