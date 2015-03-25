@@ -124,6 +124,7 @@
             this.CB_J1_Comptage.TabIndex = 1;
             this.CB_J1_Comptage.Text = "Compter les cartes";
             this.CB_J1_Comptage.UseVisualStyleBackColor = true;
+            this.CB_J1_Comptage.CheckedChanged += new System.EventHandler(this.CB_J1_Comptage_CheckedChanged);
             // 
             // RB_J1_Courageux
             // 
@@ -241,6 +242,7 @@
             this.CB_J2_Comptage.TabIndex = 1;
             this.CB_J2_Comptage.Text = "Compter les cartes";
             this.CB_J2_Comptage.UseVisualStyleBackColor = true;
+            this.CB_J2_Comptage.CheckedChanged += new System.EventHandler(this.CB_J2_Comptage_CheckedChanged);
             // 
             // RB_J2_Courageux
             // 
@@ -321,6 +323,7 @@
             this.BTN_Jouer.TabIndex = 4;
             this.BTN_Jouer.Text = "Jouer";
             this.BTN_Jouer.UseVisualStyleBackColor = true;
+            this.BTN_Jouer.Click += new System.EventHandler(this.BTN_Jouer_Click);
             // 
             // Form_Choix
             // 
