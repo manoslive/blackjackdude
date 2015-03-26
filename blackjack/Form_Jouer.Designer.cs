@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.LB_Joueur1 = new System.Windows.Forms.Label();
-            this.PN_Joueur1 = new System.Windows.Forms.Panel();
             this.flashButton1 = new FlashButton.FlashButton();
-            this.PB_J1_Carte2 = new System.Windows.Forms.PictureBox();
-            this.PB_J1_Carte1 = new System.Windows.Forms.PictureBox();
             this.LB_Joueur2 = new System.Windows.Forms.Label();
             this.PN_Joueur2 = new System.Windows.Forms.Panel();
             this.LB_PointageJ1 = new System.Windows.Forms.Label();
-            this.LB_PointageJ2 = new System.Windows.Forms.Label();
             this.GB_OptionJoueur2 = new System.Windows.Forms.GroupBox();
             this.GB_OptionJoueur1 = new System.Windows.Forms.GroupBox();
             this.BTN_Quitter = new System.Windows.Forms.Button();
@@ -46,9 +42,8 @@
             this.BTN_AfficherJournalJ2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LB_Points_J1 = new System.Windows.Forms.Label();
-            this.PN_Joueur1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).BeginInit();
+            this.LB_PointageJ2 = new System.Windows.Forms.Label();
+            this.LB_Points_J2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,20 +57,6 @@
             this.LB_Joueur1.TabIndex = 0;
             this.LB_Joueur1.Text = "Joueur1";
             // 
-            // PN_Joueur1
-            // 
-            this.PN_Joueur1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PN_Joueur1.Controls.Add(this.PB_J1_Carte2);
-            this.PN_Joueur1.Controls.Add(this.flashButton1);
-            this.PN_Joueur1.Controls.Add(this.PB_J1_Carte1);
-            this.PN_Joueur1.Location = new System.Drawing.Point(37, 44);
-            this.PN_Joueur1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PN_Joueur1.MaximumSize = new System.Drawing.Size(497, 87);
-            this.PN_Joueur1.MinimumSize = new System.Drawing.Size(497, 87);
-            this.PN_Joueur1.Name = "PN_Joueur1";
-            this.PN_Joueur1.Size = new System.Drawing.Size(497, 87);
-            this.PN_Joueur1.TabIndex = 1;
-            // 
             // flashButton1
             // 
             this.flashButton1.BackgroundImage = global::blackjack.Properties.Resources.jouer_click;
@@ -84,30 +65,12 @@
             this.flashButton1.ImageDisable = null;
             this.flashButton1.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
             this.flashButton1.ImageOver = null;
-            this.flashButton1.Location = new System.Drawing.Point(360, 13);
+            this.flashButton1.Location = new System.Drawing.Point(410, 62);
             this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flashButton1.Name = "flashButton1";
             this.flashButton1.Size = new System.Drawing.Size(58, 57);
             this.flashButton1.TabIndex = 1;
             this.flashButton1.Click += new System.EventHandler(this.flashButton1_Click);
-            // 
-            // PB_J1_Carte2
-            // 
-            this.PB_J1_Carte2.Location = new System.Drawing.Point(95, -2);
-            this.PB_J1_Carte2.Name = "PB_J1_Carte2";
-            this.PB_J1_Carte2.Size = new System.Drawing.Size(76, 87);
-            this.PB_J1_Carte2.TabIndex = 1;
-            this.PB_J1_Carte2.TabStop = false;
-            // 
-            // PB_J1_Carte1
-            // 
-            this.PB_J1_Carte1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PB_J1_Carte1.ImageLocation = "";
-            this.PB_J1_Carte1.Location = new System.Drawing.Point(177, -2);
-            this.PB_J1_Carte1.Name = "PB_J1_Carte1";
-            this.PB_J1_Carte1.Size = new System.Drawing.Size(76, 87);
-            this.PB_J1_Carte1.TabIndex = 0;
-            this.PB_J1_Carte1.TabStop = false;
             // 
             // LB_Joueur2
             // 
@@ -137,16 +100,6 @@
             this.LB_PointageJ1.Size = new System.Drawing.Size(98, 13);
             this.LB_PointageJ1.TabIndex = 3;
             this.LB_PointageJ1.Text = "Valeur des cartes : ";
-            // 
-            // LB_PointageJ2
-            // 
-            this.LB_PointageJ2.AutoSize = true;
-            this.LB_PointageJ2.Location = new System.Drawing.Point(49, 378);
-            this.LB_PointageJ2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LB_PointageJ2.Name = "LB_PointageJ2";
-            this.LB_PointageJ2.Size = new System.Drawing.Size(98, 13);
-            this.LB_PointageJ2.TabIndex = 3;
-            this.LB_PointageJ2.Text = "Valeur des cartes : ";
             // 
             // GB_OptionJoueur2
             // 
@@ -236,17 +189,39 @@
             // LB_Points_J1
             // 
             this.LB_Points_J1.AutoSize = true;
-            this.LB_Points_J1.Location = new System.Drawing.Point(131, 135);
+            this.LB_Points_J1.Location = new System.Drawing.Point(137, 135);
             this.LB_Points_J1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Points_J1.Name = "LB_Points_J1";
             this.LB_Points_J1.Size = new System.Drawing.Size(0, 13);
             this.LB_Points_J1.TabIndex = 6;
+            // 
+            // LB_PointageJ2
+            // 
+            this.LB_PointageJ2.AutoSize = true;
+            this.LB_PointageJ2.Location = new System.Drawing.Point(35, 378);
+            this.LB_PointageJ2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_PointageJ2.Name = "LB_PointageJ2";
+            this.LB_PointageJ2.Size = new System.Drawing.Size(98, 13);
+            this.LB_PointageJ2.TabIndex = 3;
+            this.LB_PointageJ2.Text = "Valeur des cartes : ";
+            // 
+            // LB_Points_J2
+            // 
+            this.LB_Points_J2.AutoSize = true;
+            this.LB_Points_J2.Location = new System.Drawing.Point(137, 378);
+            this.LB_Points_J2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_Points_J2.Name = "LB_Points_J2";
+            this.LB_Points_J2.Size = new System.Drawing.Size(10, 13);
+            this.LB_Points_J2.TabIndex = 7;
+            this.LB_Points_J2.Text = " ";
             // 
             // Form_Jouer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 408);
+            this.Controls.Add(this.LB_Points_J2);
+            this.Controls.Add(this.flashButton1);
             this.Controls.Add(this.LB_Points_J1);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.BTN_Rejouer);
@@ -259,7 +234,6 @@
             this.Controls.Add(this.LB_PointageJ1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PN_Joueur2);
-            this.Controls.Add(this.PN_Joueur1);
             this.Controls.Add(this.LB_Joueur2);
             this.Controls.Add(this.LB_Joueur1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -268,9 +242,6 @@
             this.Text = "Jouer le jeu qui joue";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Jouer_FormClosed);
             this.Load += new System.EventHandler(this.Form_Jouer_Load);
-            this.PN_Joueur1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,12 +251,10 @@
         #endregion
 
         private System.Windows.Forms.Label LB_Joueur1;
-        private System.Windows.Forms.Panel PN_Joueur1;
         private System.Windows.Forms.Label LB_Joueur2;
         private System.Windows.Forms.Panel PN_Joueur2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LB_PointageJ1;
-        private System.Windows.Forms.Label LB_PointageJ2;
         private System.Windows.Forms.GroupBox GB_OptionJoueur2;
         private System.Windows.Forms.GroupBox GB_OptionJoueur1;
         private System.Windows.Forms.Button BTN_Quitter;
@@ -294,8 +263,8 @@
         private System.Windows.Forms.Button BTN_AfficherJournalJ1;
         private System.Windows.Forms.Button BTN_AfficherJournalJ2;
         private FlashButton.FlashButton flashButton1;
-        private System.Windows.Forms.PictureBox PB_J1_Carte2;
-        private System.Windows.Forms.PictureBox PB_J1_Carte1;
         private System.Windows.Forms.Label LB_Points_J1;
+        private System.Windows.Forms.Label LB_PointageJ2;
+        private System.Windows.Forms.Label LB_Points_J2;
     }
 }
