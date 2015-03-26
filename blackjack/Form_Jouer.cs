@@ -19,7 +19,7 @@ namespace blackjack
         List<PictureBox> listCarteJ1 = new List<PictureBox>();
         public int numCarte = 0;//num de carte pigé
 
-        // Constructeurs paramétrique (2 joueurs IA)
+        // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
         {
@@ -43,9 +43,9 @@ namespace blackjack
 
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (callBackForm != null)
-                callBackForm.Show();
-            else
+            //if (callBackForm != null)
+            //    callBackForm.Show();
+            //else
                 Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
         }
 
