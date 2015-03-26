@@ -115,7 +115,11 @@ namespace blackjack
                 Points = Convert.ToInt32(LB_Points_J1.Text);
             LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
 
-            if (Convert.ToInt32(LB_Points_J1.Text) > 21)
+            if (Convert.ToInt32(LB_Points_J1.Text) == 21)
+            {
+                MessageBox.Show("BlackJack!");
+            }
+            else if (Convert.ToInt32(LB_Points_J1.Text) > 21)
             {
                 MessageBox.Show("Vous avez busté! \nJoueur 2 à gagné");
                 DisableButtons();
@@ -170,7 +174,12 @@ namespace blackjack
             if (LB_Points_J2.Text.Length > 0)
                 Points = Convert.ToInt32(LB_Points_J2.Text);
             LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
-            if(Convert.ToInt32(LB_Points_J2.Text) > 21)
+
+            if (Convert.ToInt32(LB_Points_J2.Text) == 21)
+            {
+                MessageBox.Show("BlackJack!");
+            }
+            else if(Convert.ToInt32(LB_Points_J2.Text) > 21)
             {
                 MessageBox.Show("Vous avez busté! \nJoueur 1 à gagné");
                 DisableButtons();
@@ -247,6 +256,22 @@ namespace blackjack
             FB_PasserJ1.Visible = false;
             FB_PigerJ1.Visible = false;
             BTN_Annuler.Visible = false;
+        }
+        private void BTN_Rejouer_Click(object sender, EventArgs e)
+        {
+            ReinitialiserRejouer();
+        }
+        private void ReinitialiserRejouer()
+        {
+            DisableButtons();
+            listCarteJ1.Clear();
+            listCarteJ2.Clear();
+            FB_PigerJ1.Visible = true;
+            numCarteJ1 = 0;
+            numCarteJ2 = 0;
+            LB_Points_J1.Text = "";
+            LB_Points_J2.Text = "";
+            this.Refresh();
         }
     }
 }
