@@ -15,6 +15,7 @@ namespace blackjack
         public Form callBackForm = null;
         Joueur joueur1 = new Joueur();
         Joueur joueur2 = new Joueur();
+        PaquetCartes lePaquet = null;
         public Form_Jouer()
         {
             InitializeComponent();
@@ -42,6 +43,17 @@ namespace blackjack
             Form_Journal journalj1 = new Form_Journal(joueur1._journal);
             journalj1.callBackForm = this;
             journalj1.ShowDialog();
+        }
+
+        private void flashButton1_Click(object sender, EventArgs e)
+        {
+            PB_J1_Carte1.ImageLocation = lePaquet.PigerCarte();
+            LB_Points_J1.Text = lePaquet.GetValeur().ToString();
+        }
+
+        private void Form_Jouer_Load(object sender, EventArgs e)
+        {
+            lePaquet = new PaquetCartes();
         }
     }
 }
