@@ -215,9 +215,9 @@ namespace blackjack
         {
             if(Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                 MessageBox.Show("Le Joueur1 a gagné");
-            else if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
+            else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text))
                 MessageBox.Show("Le Joueur2 a gagné");
-            else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
+            else
                 MessageBox.Show("Partie nulle");
         }
 
