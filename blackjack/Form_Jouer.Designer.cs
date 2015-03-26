@@ -240,7 +240,7 @@
             // 
             this.FB_PigerJ2.BackgroundImage = global::blackjack.Properties.Resources.piger_click;
             this.FB_PigerJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_PigerJ2.ImageClick = global::blackjack.Properties.Resources.check_click;
+            this.FB_PigerJ2.ImageClick = global::blackjack.Properties.Resources.piger_default;
             this.FB_PigerJ2.ImageDisable = null;
             this.FB_PigerJ2.ImageNeutral = global::blackjack.Properties.Resources.piger_click;
             this.FB_PigerJ2.ImageOver = null;
