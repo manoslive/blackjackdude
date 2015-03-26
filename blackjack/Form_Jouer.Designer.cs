@@ -86,9 +86,9 @@
             this.GB_OptionJoueur2.Controls.Add(this.FB_PasserJ2);
             this.GB_OptionJoueur2.Controls.Add(this.FB_PigerJ2);
             this.GB_OptionJoueur2.Location = new System.Drawing.Point(340, 159);
-            this.GB_OptionJoueur2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur2.Margin = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur2.Name = "GB_OptionJoueur2";
-            this.GB_OptionJoueur2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur2.Padding = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur2.Size = new System.Drawing.Size(188, 92);
             this.GB_OptionJoueur2.TabIndex = 4;
             this.GB_OptionJoueur2.TabStop = false;
@@ -119,15 +119,16 @@
             this.FB_PigerJ2.Name = "FB_PigerJ2";
             this.FB_PigerJ2.Size = new System.Drawing.Size(73, 67);
             this.FB_PigerJ2.TabIndex = 0;
+            this.FB_PigerJ2.Click += new System.EventHandler(this.FB_PigerJ2_Click);
             // 
             // GB_OptionJoueur1
             // 
             this.GB_OptionJoueur1.Controls.Add(this.FB_PasserJ1);
             this.GB_OptionJoueur1.Controls.Add(this.FB_PigerJ1);
             this.GB_OptionJoueur1.Location = new System.Drawing.Point(46, 159);
-            this.GB_OptionJoueur1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur1.Margin = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur1.Name = "GB_OptionJoueur1";
-            this.GB_OptionJoueur1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur1.Padding = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur1.Size = new System.Drawing.Size(188, 92);
             this.GB_OptionJoueur1.TabIndex = 4;
             this.GB_OptionJoueur1.TabStop = false;
@@ -164,7 +165,7 @@
             // BTN_Quitter
             // 
             this.BTN_Quitter.Location = new System.Drawing.Point(473, 378);
-            this.BTN_Quitter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Quitter.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(69, 23);
             this.BTN_Quitter.TabIndex = 5;
@@ -175,7 +176,7 @@
             // BTN_Rejouer
             // 
             this.BTN_Rejouer.Location = new System.Drawing.Point(399, 378);
-            this.BTN_Rejouer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Rejouer.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Rejouer.Name = "BTN_Rejouer";
             this.BTN_Rejouer.Size = new System.Drawing.Size(69, 23);
             this.BTN_Rejouer.TabIndex = 5;
@@ -185,7 +186,7 @@
             // BTN_Annuler
             // 
             this.BTN_Annuler.Location = new System.Drawing.Point(326, 378);
-            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(69, 23);
             this.BTN_Annuler.TabIndex = 5;
@@ -195,7 +196,7 @@
             // BTN_AfficherJournalJ1
             // 
             this.BTN_AfficherJournalJ1.Location = new System.Drawing.Point(464, 14);
-            this.BTN_AfficherJournalJ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_AfficherJournalJ1.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_AfficherJournalJ1.Name = "BTN_AfficherJournalJ1";
             this.BTN_AfficherJournalJ1.Size = new System.Drawing.Size(69, 23);
             this.BTN_AfficherJournalJ1.TabIndex = 5;
@@ -206,7 +207,7 @@
             // BTN_AfficherJournalJ2
             // 
             this.BTN_AfficherJournalJ2.Location = new System.Drawing.Point(464, 259);
-            this.BTN_AfficherJournalJ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_AfficherJournalJ2.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_AfficherJournalJ2.Name = "BTN_AfficherJournalJ2";
             this.BTN_AfficherJournalJ2.Size = new System.Drawing.Size(69, 23);
             this.BTN_AfficherJournalJ2.TabIndex = 5;
@@ -239,15 +240,14 @@
             this.LB_Points_J2.Location = new System.Drawing.Point(135, 378);
             this.LB_Points_J2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LB_Points_J2.Name = "LB_Points_J2";
-            this.LB_Points_J2.Size = new System.Drawing.Size(10, 13);
+            this.LB_Points_J2.Size = new System.Drawing.Size(0, 13);
             this.LB_Points_J2.TabIndex = 7;
-            this.LB_Points_J2.Text = " ";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
             this.pictureBox1.Location = new System.Drawing.Point(238, 159);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(97, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,7 +274,7 @@
             this.Controls.Add(this.LB_Joueur2);
             this.Controls.Add(this.LB_Joueur1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Jouer";
             this.Text = "Jouer le jeu qui joue";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Jouer_FormClosed);
