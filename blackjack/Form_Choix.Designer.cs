@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Choix));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GB_Joueur1 = new System.Windows.Forms.GroupBox();
             this.GB_J1_TypeIA = new System.Windows.Forms.GroupBox();
             this.GB_J1_NiveauIA = new System.Windows.Forms.Label();
@@ -51,13 +51,14 @@
             this.RB_J2_IA = new System.Windows.Forms.RadioButton();
             this.RB_J2_Humain = new System.Windows.Forms.RadioButton();
             this.BTN_Jouer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GB_Joueur1.SuspendLayout();
             this.GB_J1_TypeIA.SuspendLayout();
             this.GB_J1_TypeJoueur.SuspendLayout();
             this.GB_Joueur2.SuspendLayout();
             this.GB_J2_TypeIA.SuspendLayout();
             this.GB_J2_TypeJoueur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,16 +70,6 @@
             this.label1.Size = new System.Drawing.Size(518, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Choisir un mode de jeu";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
-            this.pictureBox1.Location = new System.Drawing.Point(294, 212);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 156);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // GB_Joueur1
             // 
@@ -325,6 +316,16 @@
             this.BTN_Jouer.UseVisualStyleBackColor = true;
             this.BTN_Jouer.Click += new System.EventHandler(this.BTN_Jouer_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
+            this.pictureBox1.Location = new System.Drawing.Point(294, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_Choix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -335,9 +336,9 @@
             this.Controls.Add(this.GB_Joueur1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Choix";
             this.Text = "BlackJack";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GB_Joueur1.ResumeLayout(false);
             this.GB_J1_TypeIA.ResumeLayout(false);
             this.GB_J1_TypeIA.PerformLayout();
@@ -348,6 +349,7 @@
             this.GB_J2_TypeIA.PerformLayout();
             this.GB_J2_TypeJoueur.ResumeLayout(false);
             this.GB_J2_TypeJoueur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
