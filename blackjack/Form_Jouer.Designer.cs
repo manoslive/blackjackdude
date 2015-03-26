@@ -31,7 +31,6 @@
             this.LB_Joueur1 = new System.Windows.Forms.Label();
             this.flashButton1 = new FlashButton.FlashButton();
             this.LB_Joueur2 = new System.Windows.Forms.Label();
-            this.PN_Joueur2 = new System.Windows.Forms.Panel();
             this.LB_PointageJ1 = new System.Windows.Forms.Label();
             this.GB_OptionJoueur2 = new System.Windows.Forms.GroupBox();
             this.GB_OptionJoueur1 = new System.Windows.Forms.GroupBox();
@@ -65,8 +64,7 @@
             this.flashButton1.ImageDisable = null;
             this.flashButton1.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
             this.flashButton1.ImageOver = null;
-            this.flashButton1.Location = new System.Drawing.Point(410, 62);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flashButton1.Location = new System.Drawing.Point(273, 40);
             this.flashButton1.Name = "flashButton1";
             this.flashButton1.Size = new System.Drawing.Size(58, 57);
             this.flashButton1.TabIndex = 1;
@@ -81,15 +79,6 @@
             this.LB_Joueur2.Size = new System.Drawing.Size(45, 13);
             this.LB_Joueur2.TabIndex = 0;
             this.LB_Joueur2.Text = "Joueur2";
-            // 
-            // PN_Joueur2
-            // 
-            this.PN_Joueur2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PN_Joueur2.Location = new System.Drawing.Point(46, 292);
-            this.PN_Joueur2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PN_Joueur2.Name = "PN_Joueur2";
-            this.PN_Joueur2.Size = new System.Drawing.Size(497, 79);
-            this.PN_Joueur2.TabIndex = 1;
             // 
             // LB_PointageJ1
             // 
@@ -189,17 +178,18 @@
             // LB_Points_J1
             // 
             this.LB_Points_J1.AutoSize = true;
-            this.LB_Points_J1.Location = new System.Drawing.Point(137, 135);
-            this.LB_Points_J1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_Points_J1.Location = new System.Drawing.Point(91, 88);
+            this.LB_Points_J1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LB_Points_J1.Name = "LB_Points_J1";
             this.LB_Points_J1.Size = new System.Drawing.Size(0, 13);
             this.LB_Points_J1.TabIndex = 6;
+            this.LB_Points_J1.TextChanged += new System.EventHandler(this.LB_Points_J1_TextChanged);
             // 
             // LB_PointageJ2
             // 
             this.LB_PointageJ2.AutoSize = true;
             this.LB_PointageJ2.Location = new System.Drawing.Point(35, 378);
-            this.LB_PointageJ2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_PointageJ2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LB_PointageJ2.Name = "LB_PointageJ2";
             this.LB_PointageJ2.Size = new System.Drawing.Size(98, 13);
             this.LB_PointageJ2.TabIndex = 3;
@@ -208,8 +198,8 @@
             // LB_Points_J2
             // 
             this.LB_Points_J2.AutoSize = true;
-            this.LB_Points_J2.Location = new System.Drawing.Point(137, 378);
-            this.LB_Points_J2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_Points_J2.Location = new System.Drawing.Point(135, 378);
+            this.LB_Points_J2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LB_Points_J2.Name = "LB_Points_J2";
             this.LB_Points_J2.Size = new System.Drawing.Size(10, 13);
             this.LB_Points_J2.TabIndex = 7;
@@ -219,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 408);
+            this.ClientSize = new System.Drawing.Size(563, 424);
             this.Controls.Add(this.LB_Points_J2);
             this.Controls.Add(this.flashButton1);
             this.Controls.Add(this.LB_Points_J1);
@@ -233,7 +223,6 @@
             this.Controls.Add(this.LB_PointageJ2);
             this.Controls.Add(this.LB_PointageJ1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PN_Joueur2);
             this.Controls.Add(this.LB_Joueur2);
             this.Controls.Add(this.LB_Joueur1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -252,7 +241,6 @@
 
         private System.Windows.Forms.Label LB_Joueur1;
         private System.Windows.Forms.Label LB_Joueur2;
-        private System.Windows.Forms.Panel PN_Joueur2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LB_PointageJ1;
         private System.Windows.Forms.GroupBox GB_OptionJoueur2;

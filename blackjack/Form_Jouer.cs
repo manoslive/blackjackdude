@@ -62,7 +62,7 @@ namespace blackjack
             Point locationInitial = new Point(this.Size.Width/2 - 35, 40);
             Point tempLocation = new Point(0,0);
             int Points = 0;   
-            if(listCarteJ1.Count <=0)
+            if (listCarteJ1.Count <= 0)
                 tempLocation = locationInitial;
             else 
                 tempLocation = listCarteJ1[numCarte-1].Location;
@@ -70,7 +70,7 @@ namespace blackjack
             listCarteJ1[numCarte].Size = new System.Drawing.Size(70,90);
             listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
             listCarteJ1[numCarte].Location = new Point(tempLocation.X + 50, tempLocation.Y);
-            listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;    
+            listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;
             this.Controls.Add(listCarteJ1[numCarte]);
             listCarteJ1[numCarte].BringToFront();
             for (int i = 0; i < listCarteJ1.Count;i++ )
@@ -88,6 +88,19 @@ namespace blackjack
 
         private void Form_Jouer_Load(object sender, EventArgs e)
         {
+        }
+
+        private void LB_Points_J1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void CheckWin()
+        {
+            int ptsJ1 = Convert.ToInt32(LB_Points_J1.Text);
+            while(!joueur1._AFini)
+            {
+
+            }
         }
     }
 }
