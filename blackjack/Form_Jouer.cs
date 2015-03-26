@@ -21,7 +21,6 @@ namespace blackjack
         public int numCarteJ1 = 0;//num de carte pigé
         List<PictureBox> listCarteJ2 = new List<PictureBox>();
         public int numCarteJ2 = 0;//num de carte pigé
-        bool rejouer = false;
         // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
@@ -268,6 +267,14 @@ namespace blackjack
         private void ReinitialiserRejouer()
         {
             DisableButtons();
+            for (int i = 0; i < listCarteJ1.Count;i++ )
+            {
+                this.Controls.Remove(listCarteJ1[i]);
+            }
+            for (int i = 0; i < listCarteJ2.Count; i++)
+            {
+                this.Controls.Remove(listCarteJ2[i]);
+            }
             listCarteJ1.Clear();
             listCarteJ2.Clear();
             FB_PigerJ1.Visible = true;
@@ -275,8 +282,6 @@ namespace blackjack
             numCarteJ2 = 0;
             LB_Points_J1.Text = "";
             LB_Points_J2.Text = "";
-            rejouer = true;
-            this.Close();
         }
 
         private void BTN_Annuler_Click(object sender, EventArgs e)
