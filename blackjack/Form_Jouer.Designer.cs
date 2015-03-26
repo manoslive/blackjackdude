@@ -30,6 +30,8 @@
         {
             this.LB_Joueur1 = new System.Windows.Forms.Label();
             this.PN_Joueur1 = new System.Windows.Forms.Panel();
+            this.PB_J1_Carte2 = new System.Windows.Forms.PictureBox();
+            this.PB_J1_Carte1 = new System.Windows.Forms.PictureBox();
             this.LB_Joueur2 = new System.Windows.Forms.Label();
             this.PN_Joueur2 = new System.Windows.Forms.Panel();
             this.LB_PointageJ1 = new System.Windows.Forms.Label();
@@ -43,14 +45,12 @@
             this.BTN_AfficherJournalJ1 = new System.Windows.Forms.Button();
             this.BTN_AfficherJournalJ2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PB_J1_Carte1 = new System.Windows.Forms.PictureBox();
-            this.PB_J1_Carte2 = new System.Windows.Forms.PictureBox();
             this.LB_Points_J1 = new System.Windows.Forms.Label();
             this.PN_Joueur1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).BeginInit();
             this.GB_OptionJoueur1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Joueur1
@@ -69,12 +69,30 @@
             this.PN_Joueur1.Controls.Add(this.PB_J1_Carte2);
             this.PN_Joueur1.Controls.Add(this.PB_J1_Carte1);
             this.PN_Joueur1.Location = new System.Drawing.Point(37, 44);
-            this.PN_Joueur1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PN_Joueur1.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Joueur1.MaximumSize = new System.Drawing.Size(497, 87);
             this.PN_Joueur1.MinimumSize = new System.Drawing.Size(497, 87);
             this.PN_Joueur1.Name = "PN_Joueur1";
             this.PN_Joueur1.Size = new System.Drawing.Size(497, 87);
             this.PN_Joueur1.TabIndex = 1;
+            // 
+            // PB_J1_Carte2
+            // 
+            this.PB_J1_Carte2.Location = new System.Drawing.Point(177, -2);
+            this.PB_J1_Carte2.Name = "PB_J1_Carte2";
+            this.PB_J1_Carte2.Size = new System.Drawing.Size(76, 87);
+            this.PB_J1_Carte2.TabIndex = 1;
+            this.PB_J1_Carte2.TabStop = false;
+            // 
+            // PB_J1_Carte1
+            // 
+            this.PB_J1_Carte1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PB_J1_Carte1.ImageLocation = "";
+            this.PB_J1_Carte1.Location = new System.Drawing.Point(95, -2);
+            this.PB_J1_Carte1.Name = "PB_J1_Carte1";
+            this.PB_J1_Carte1.Size = new System.Drawing.Size(76, 87);
+            this.PB_J1_Carte1.TabIndex = 0;
+            this.PB_J1_Carte1.TabStop = false;
             // 
             // LB_Joueur2
             // 
@@ -90,7 +108,7 @@
             // 
             this.PN_Joueur2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PN_Joueur2.Location = new System.Drawing.Point(46, 292);
-            this.PN_Joueur2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PN_Joueur2.Margin = new System.Windows.Forms.Padding(2);
             this.PN_Joueur2.Name = "PN_Joueur2";
             this.PN_Joueur2.Size = new System.Drawing.Size(497, 79);
             this.PN_Joueur2.TabIndex = 1;
@@ -118,9 +136,9 @@
             // GB_OptionJoueur2
             // 
             this.GB_OptionJoueur2.Location = new System.Drawing.Point(340, 159);
-            this.GB_OptionJoueur2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur2.Margin = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur2.Name = "GB_OptionJoueur2";
-            this.GB_OptionJoueur2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur2.Padding = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur2.Size = new System.Drawing.Size(188, 92);
             this.GB_OptionJoueur2.TabIndex = 4;
             this.GB_OptionJoueur2.TabStop = false;
@@ -130,9 +148,9 @@
             // 
             this.GB_OptionJoueur1.Controls.Add(this.flashButton1);
             this.GB_OptionJoueur1.Location = new System.Drawing.Point(46, 159);
-            this.GB_OptionJoueur1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur1.Margin = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur1.Name = "GB_OptionJoueur1";
-            this.GB_OptionJoueur1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_OptionJoueur1.Padding = new System.Windows.Forms.Padding(2);
             this.GB_OptionJoueur1.Size = new System.Drawing.Size(188, 92);
             this.GB_OptionJoueur1.TabIndex = 4;
             this.GB_OptionJoueur1.TabStop = false;
@@ -155,7 +173,7 @@
             // BTN_Quitter
             // 
             this.BTN_Quitter.Location = new System.Drawing.Point(473, 378);
-            this.BTN_Quitter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Quitter.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(69, 23);
             this.BTN_Quitter.TabIndex = 5;
@@ -166,7 +184,7 @@
             // BTN_Rejouer
             // 
             this.BTN_Rejouer.Location = new System.Drawing.Point(399, 378);
-            this.BTN_Rejouer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Rejouer.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Rejouer.Name = "BTN_Rejouer";
             this.BTN_Rejouer.Size = new System.Drawing.Size(69, 23);
             this.BTN_Rejouer.TabIndex = 5;
@@ -176,7 +194,7 @@
             // BTN_Annuler
             // 
             this.BTN_Annuler.Location = new System.Drawing.Point(326, 378);
-            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(69, 23);
             this.BTN_Annuler.TabIndex = 5;
@@ -186,7 +204,7 @@
             // BTN_AfficherJournalJ1
             // 
             this.BTN_AfficherJournalJ1.Location = new System.Drawing.Point(464, 14);
-            this.BTN_AfficherJournalJ1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_AfficherJournalJ1.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_AfficherJournalJ1.Name = "BTN_AfficherJournalJ1";
             this.BTN_AfficherJournalJ1.Size = new System.Drawing.Size(69, 23);
             this.BTN_AfficherJournalJ1.TabIndex = 5;
@@ -197,7 +215,7 @@
             // BTN_AfficherJournalJ2
             // 
             this.BTN_AfficherJournalJ2.Location = new System.Drawing.Point(464, 259);
-            this.BTN_AfficherJournalJ2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTN_AfficherJournalJ2.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_AfficherJournalJ2.Name = "BTN_AfficherJournalJ2";
             this.BTN_AfficherJournalJ2.Size = new System.Drawing.Size(69, 23);
             this.BTN_AfficherJournalJ2.TabIndex = 5;
@@ -208,29 +226,12 @@
             // 
             this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
             this.pictureBox1.Location = new System.Drawing.Point(238, 159);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(97, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // PB_J1_Carte1
-            // 
-            this.PB_J1_Carte1.ImageLocation = "";
-            this.PB_J1_Carte1.Location = new System.Drawing.Point(95, -2);
-            this.PB_J1_Carte1.Name = "PB_J1_Carte1";
-            this.PB_J1_Carte1.Size = new System.Drawing.Size(76, 87);
-            this.PB_J1_Carte1.TabIndex = 0;
-            this.PB_J1_Carte1.TabStop = false;
-            // 
-            // PB_J1_Carte2
-            // 
-            this.PB_J1_Carte2.Location = new System.Drawing.Point(177, -2);
-            this.PB_J1_Carte2.Name = "PB_J1_Carte2";
-            this.PB_J1_Carte2.Size = new System.Drawing.Size(76, 87);
-            this.PB_J1_Carte2.TabIndex = 1;
-            this.PB_J1_Carte2.TabStop = false;
             // 
             // LB_Points_J1
             // 
@@ -262,16 +263,16 @@
             this.Controls.Add(this.LB_Joueur2);
             this.Controls.Add(this.LB_Joueur1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Jouer";
             this.Text = "Jouer le jeu qui joue";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Jouer_FormClosed);
             this.Load += new System.EventHandler(this.Form_Jouer_Load);
             this.PN_Joueur1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).EndInit();
             this.GB_OptionJoueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

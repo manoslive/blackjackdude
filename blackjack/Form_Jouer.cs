@@ -47,8 +47,10 @@ namespace blackjack
 
         private void flashButton1_Click(object sender, EventArgs e)
         {
-            PB_J1_Carte1.ImageLocation = lePaquet.PigerCarte();
+            PB_J1_Carte1.BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
+            PB_J1_Carte1.BackgroundImageLayout = ImageLayout.Stretch;
             LB_Points_J1.Text = lePaquet.GetValeur().ToString();
+
         }
 
         private void Form_Jouer_Load(object sender, EventArgs e)
