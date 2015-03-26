@@ -64,7 +64,7 @@ namespace blackjack
             int Points = 0;   
             if(listCarteJ1.Count <=0)
                 tempLocation = locationInitial;
-            else
+            else 
                 tempLocation = listCarteJ1[numCarte].Location;
             listCarteJ1.Add(new PictureBox());
             listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
