@@ -97,14 +97,22 @@ namespace blackjack
 
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
-
-                int Points = 0;
+            if(numCarteJ1==0)
+            {
                 PigerCarteJ1();
-                if (LB_Points_J1.Text.Length > 0)
-                    Points = Convert.ToInt32(LB_Points_J1.Text);
-                LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
+                PigerCarteJ1();
+            }
+            else
+                PigerCarteJ1();
 
-               // ChangerTour(joueur2);
+            // ChangerTour(joueur2);
+        }
+        private void CalculerPointsJ1()
+        {
+            int Points = 0;
+            if (LB_Points_J1.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J1.Text);
+            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
         }
         public void PigerCarteJ1()
         {
@@ -134,21 +142,29 @@ namespace blackjack
                     listCarteJ1[i].BringToFront();
                 }
             }
-
+            CalculerPointsJ1();
             numCarteJ1++;
         }
 
         private void FB_PigerJ2_Click(object sender, EventArgs e)
-        {
-                int Points = 0;
-                PigerCarteJ2();
-                if (LB_Points_J2.Text.Length > 0)
-                    Points = Convert.ToInt32(LB_Points_J2.Text);
-                LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
+        {  
+                if (numCarteJ2 == 0)
+                {
+                    PigerCarteJ2();
+                    PigerCarteJ2();
+                }
+                else
+                    PigerCarteJ2();
 
                //  ChangerTour(joueur1);
         }
-
+        private void CalculerPointsJ2()
+        {
+            int Points = 0;
+            if (LB_Points_J2.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J2.Text);
+            LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
+        }
         public void PigerCarteJ2()
         {
             Point locationInitial = new Point(this.Size.Width / 2 - 35, 280);
@@ -178,6 +194,7 @@ namespace blackjack
                 }
             }
             numCarteJ2++;
+            CalculerPointsJ2();
         }
 
         private void FB_PasserJ1_Click(object sender, EventArgs e)
