@@ -35,7 +35,7 @@ namespace blackjack
         public int getValeurCarte()
         {
             const int FIGURES = 10;
-            const int AS = 11; // Il faudrait voir comment choisir entre 1 et 11 ////////////////////////////////
+            const int AS = 11; 
             int resultat;
 
             if (_valeur == titre.Valet || _valeur == titre.Dame || _valeur == titre.Roi)

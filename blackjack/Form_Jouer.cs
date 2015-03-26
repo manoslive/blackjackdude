@@ -129,7 +129,7 @@ namespace blackjack
             {
                 tempLocation = listCarteJ1[numCarteJ1 - 1].Location;
                 listCarteJ1[numCarteJ1].Location = new Point(tempLocation.X + 50, tempLocation.Y);
-            }   
+            }
             listCarteJ1[numCarteJ1].BackgroundImageLayout = ImageLayout.Stretch;
             this.Controls.Add(listCarteJ1[numCarteJ1]);
             listCarteJ1[numCarteJ1].BringToFront();

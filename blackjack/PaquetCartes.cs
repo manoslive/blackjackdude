@@ -37,6 +37,7 @@ namespace blackjack
         {
             cartePigé = rnd.Next(0, 52);
             string laCarte = Paquet[cartePigé].getURLCarte();
+            
             return laCarte;
         }
         // Obtient le numéro de la dernière carte pigée
