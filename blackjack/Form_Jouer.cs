@@ -16,6 +16,8 @@ namespace blackjack
         Joueur joueur1 = null;
         Joueur joueur2 = null;
         PaquetCartes lePaquet = new PaquetCartes();
+        List<PictureBox> listCarteJ1 = new List<PictureBox>();
+        public int numCarte = 0;//num de carte pigé
 
         // Constructeurs paramétrique (2 joueurs IA)
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
@@ -57,11 +59,23 @@ namespace blackjack
 
         private void flashButton1_Click(object sender, EventArgs e)
         {
-            int Points = 0;
-            PB_J1_Carte1.BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
-            PB_J1_Carte1.BackgroundImageLayout = ImageLayout.Stretch;
-            //Points = Convert.ToInt32(LB_Points_J1.Text);
-            LB_Points_J1.Text = (lePaquet.GetValeur()).ToString();
+            Point locationInitial = new Point(0, 0);
+            Point tempLocation = new Point(0,0);
+            int Points = 0;   
+            if(listCarteJ1.Count <=0)
+                tempLocation = locationInitial;
+            else
+                tempLocation = listCarteJ1[numCarte].Location;
+            listCarteJ1.Add(new PictureBox());
+            listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
+            listCarteJ1[numCarte].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;
+            listCarteJ1[numCarte].Show();
+            numCarte++;
+
+            if (LB_Points_J1.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J1.Text);
+            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
 
         }
 
