@@ -15,11 +15,13 @@ namespace blackjack
         public Form callBackForm = null;
         Joueur joueur1 = null;
         Joueur joueur2 = null;
+        bool nouvellePartie = false;
         PaquetCartes lePaquet = new PaquetCartes();
         List<PictureBox> listCarteJ1 = new List<PictureBox>();
         public int numCarteJ1 = 0;//num de carte pigé
         List<PictureBox> listCarteJ2 = new List<PictureBox>();
         public int numCarteJ2 = 0;//num de carte pigé
+        bool rejouer = false;
         // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
@@ -44,10 +46,12 @@ namespace blackjack
 
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //if (callBackForm != null)
-            //    callBackForm.Show();
-            //else
-            Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
+            if (nouvellePartie)
+            {
+                Form_Choix choix = new Form_Choix();
+                choix.ShowDialog();
+            }
+            Application.Exit();
         }
 
         private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
@@ -232,7 +236,7 @@ namespace blackjack
         }
         private void VerfierGagnant()
         {
-            if(Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
+            if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                 MessageBox.Show("Le Joueur1 a gagné");
             else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text))
                 MessageBox.Show("Le Joueur2 a gagné");
@@ -271,7 +275,15 @@ namespace blackjack
             numCarteJ2 = 0;
             LB_Points_J1.Text = "";
             LB_Points_J2.Text = "";
-            this.Refresh();
+            rejouer = true;
+            this.Close();
+        }
+
+        private void BTN_Annuler_Click(object sender, EventArgs e)
+        {
+            nouvellePartie = true;
+            this.Hide();
+            this.Close();
         }
     }
 }

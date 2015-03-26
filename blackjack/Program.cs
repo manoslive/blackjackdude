@@ -16,7 +16,9 @@ namespace blackjack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Load());
+            // Application.Run(new Form_Load());
+            Application.Run(new Form_Choix());
+
         }
     }
 }
