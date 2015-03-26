@@ -92,5 +92,10 @@ namespace blackjack
             else
                 joueur2_EstCompter = true;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

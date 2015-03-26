@@ -121,10 +121,13 @@
   <data name="Versus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Versus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Load_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Load_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jouer_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jouer_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Load_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Load_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jouer_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jouer_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

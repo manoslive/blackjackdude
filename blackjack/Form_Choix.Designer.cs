@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Choix));
-            this.label1 = new System.Windows.Forms.Label();
+            this.LB_ModeJeu = new System.Windows.Forms.Label();
             this.GB_Joueur1 = new System.Windows.Forms.GroupBox();
             this.GB_J1_TypeIA = new System.Windows.Forms.GroupBox();
             this.GB_J1_NiveauIA = new System.Windows.Forms.Label();
@@ -61,15 +61,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LB_ModeJeu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(518, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Choisir un mode de jeu";
+            this.LB_ModeJeu.AutoSize = true;
+            this.LB_ModeJeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_ModeJeu.Location = new System.Drawing.Point(124, 9);
+            this.LB_ModeJeu.Name = "LB_ModeJeu";
+            this.LB_ModeJeu.Size = new System.Drawing.Size(518, 55);
+            this.LB_ModeJeu.TabIndex = 0;
+            this.LB_ModeJeu.Text = "Choisir un mode de jeu";
+            this.LB_ModeJeu.Click += new System.EventHandler(this.label1_Click);
             // 
             // GB_Joueur1
             // 
@@ -335,7 +336,7 @@
             this.Controls.Add(this.GB_Joueur2);
             this.Controls.Add(this.GB_Joueur1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_ModeJeu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Choix";
             this.Text = "BlackJack";
@@ -357,7 +358,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_ModeJeu;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox GB_Joueur1;
         private System.Windows.Forms.GroupBox GB_J1_TypeJoueur;

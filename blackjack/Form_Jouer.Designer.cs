@@ -60,14 +60,16 @@
             // 
             this.PN_Joueur1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PN_Joueur1.Location = new System.Drawing.Point(56, 68);
+            this.PN_Joueur1.MaximumSize = new System.Drawing.Size(744, 132);
+            this.PN_Joueur1.MinimumSize = new System.Drawing.Size(744, 132);
             this.PN_Joueur1.Name = "PN_Joueur1";
-            this.PN_Joueur1.Size = new System.Drawing.Size(744, 199);
+            this.PN_Joueur1.Size = new System.Drawing.Size(744, 132);
             this.PN_Joueur1.TabIndex = 1;
             // 
             // LB_Joueur2
             // 
             this.LB_Joueur2.AutoSize = true;
-            this.LB_Joueur2.Location = new System.Drawing.Point(52, 485);
+            this.LB_Joueur2.Location = new System.Drawing.Point(52, 407);
             this.LB_Joueur2.Name = "LB_Joueur2";
             this.LB_Joueur2.Size = new System.Drawing.Size(67, 20);
             this.LB_Joueur2.TabIndex = 0;
@@ -76,15 +78,15 @@
             // PN_Joueur2
             // 
             this.PN_Joueur2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PN_Joueur2.Location = new System.Drawing.Point(56, 517);
+            this.PN_Joueur2.Location = new System.Drawing.Point(69, 449);
             this.PN_Joueur2.Name = "PN_Joueur2";
-            this.PN_Joueur2.Size = new System.Drawing.Size(744, 199);
+            this.PN_Joueur2.Size = new System.Drawing.Size(744, 119);
             this.PN_Joueur2.TabIndex = 1;
             // 
             // LB_PointageJ1
             // 
             this.LB_PointageJ1.AutoSize = true;
-            this.LB_PointageJ1.Location = new System.Drawing.Point(52, 285);
+            this.LB_PointageJ1.Location = new System.Drawing.Point(52, 207);
             this.LB_PointageJ1.Name = "LB_PointageJ1";
             this.LB_PointageJ1.Size = new System.Drawing.Size(145, 20);
             this.LB_PointageJ1.TabIndex = 3;
@@ -93,7 +95,7 @@
             // LB_PointageJ2
             // 
             this.LB_PointageJ2.AutoSize = true;
-            this.LB_PointageJ2.Location = new System.Drawing.Point(61, 730);
+            this.LB_PointageJ2.Location = new System.Drawing.Point(74, 582);
             this.LB_PointageJ2.Name = "LB_PointageJ2";
             this.LB_PointageJ2.Size = new System.Drawing.Size(145, 20);
             this.LB_PointageJ2.TabIndex = 3;
@@ -101,7 +103,7 @@
             // 
             // GB_OptionJoueur2
             // 
-            this.GB_OptionJoueur2.Location = new System.Drawing.Point(510, 323);
+            this.GB_OptionJoueur2.Location = new System.Drawing.Point(510, 245);
             this.GB_OptionJoueur2.Name = "GB_OptionJoueur2";
             this.GB_OptionJoueur2.Size = new System.Drawing.Size(282, 142);
             this.GB_OptionJoueur2.TabIndex = 4;
@@ -111,7 +113,7 @@
             // GB_OptionJoueur1
             // 
             this.GB_OptionJoueur1.Controls.Add(this.flashButton1);
-            this.GB_OptionJoueur1.Location = new System.Drawing.Point(69, 323);
+            this.GB_OptionJoueur1.Location = new System.Drawing.Point(69, 245);
             this.GB_OptionJoueur1.Name = "GB_OptionJoueur1";
             this.GB_OptionJoueur1.Size = new System.Drawing.Size(282, 142);
             this.GB_OptionJoueur1.TabIndex = 4;
@@ -120,7 +122,7 @@
             // 
             // BTN_Quitter
             // 
-            this.BTN_Quitter.Location = new System.Drawing.Point(696, 723);
+            this.BTN_Quitter.Location = new System.Drawing.Point(709, 582);
             this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(104, 35);
             this.BTN_Quitter.TabIndex = 5;
@@ -130,7 +132,7 @@
             // 
             // BTN_Rejouer
             // 
-            this.BTN_Rejouer.Location = new System.Drawing.Point(586, 723);
+            this.BTN_Rejouer.Location = new System.Drawing.Point(599, 582);
             this.BTN_Rejouer.Name = "BTN_Rejouer";
             this.BTN_Rejouer.Size = new System.Drawing.Size(104, 35);
             this.BTN_Rejouer.TabIndex = 5;
@@ -139,7 +141,7 @@
             // 
             // BTN_Annuler
             // 
-            this.BTN_Annuler.Location = new System.Drawing.Point(476, 723);
+            this.BTN_Annuler.Location = new System.Drawing.Point(489, 582);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(104, 35);
             this.BTN_Annuler.TabIndex = 5;
@@ -157,7 +159,7 @@
             // 
             // BTN_AfficherJournalJ2
             // 
-            this.BTN_AfficherJournalJ2.Location = new System.Drawing.Point(696, 476);
+            this.BTN_AfficherJournalJ2.Location = new System.Drawing.Point(696, 398);
             this.BTN_AfficherJournalJ2.Name = "BTN_AfficherJournalJ2";
             this.BTN_AfficherJournalJ2.Size = new System.Drawing.Size(104, 35);
             this.BTN_AfficherJournalJ2.TabIndex = 5;
@@ -166,9 +168,11 @@
             // 
             // flashButton1
             // 
+            this.flashButton1.BackgroundImage = global::blackjack.Properties.Resources.jouer_click;
             this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flashButton1.ImageClick = null;
+            this.flashButton1.ImageClick = global::blackjack.Properties.Resources.jouer_default;
             this.flashButton1.ImageDisable = null;
+            this.flashButton1.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
             this.flashButton1.ImageOver = null;
             this.flashButton1.Location = new System.Drawing.Point(16, 37);
             this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -179,7 +183,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
-            this.pictureBox1.Location = new System.Drawing.Point(357, 323);
+            this.pictureBox1.Location = new System.Drawing.Point(357, 245);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 766);
+            this.ClientSize = new System.Drawing.Size(854, 627);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.BTN_Rejouer);
             this.Controls.Add(this.BTN_AfficherJournalJ2);
@@ -205,8 +209,10 @@
             this.Controls.Add(this.PN_Joueur1);
             this.Controls.Add(this.LB_Joueur2);
             this.Controls.Add(this.LB_Joueur1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form_Jouer";
             this.Text = "Form_Jouer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Jouer_FormClosed);
             this.GB_OptionJoueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

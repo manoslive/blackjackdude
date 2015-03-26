@@ -21,5 +21,10 @@ namespace blackjack
         {
             this.Close();
         }
+
+        private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
+        }
     }
 }
