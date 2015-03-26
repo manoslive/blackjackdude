@@ -14,6 +14,7 @@ namespace blackjack
     {
         public bool joueur1_EstCompter {get; set;}
         public bool joueur2_EstCompter { get; set; }
+        public Joueur.niveauIA niveau { get; set; }
 
 
         public Form_Choix()
@@ -73,9 +74,12 @@ namespace blackjack
         private void BTN_Jouer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Jouer jouer = new Form_Jouer();
-            jouer.callBackForm = this;
-            jouer.ShowDialog();
+            if (RB_J1_IA.Checked)
+            {
+                Form_Jouer jouer = new Form_Jouer(niveau, joueur1_EstCompter);
+                jouer.callBackForm = this;
+                jouer.ShowDialog();
+            }
         }
 
         private void CB_J1_Comptage_CheckedChanged(object sender, EventArgs e)
