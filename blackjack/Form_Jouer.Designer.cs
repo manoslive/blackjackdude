@@ -207,6 +207,7 @@
             this.BTN_AfficherJournalJ2.TabIndex = 5;
             this.BTN_AfficherJournalJ2.Text = "Journal J2";
             this.BTN_AfficherJournalJ2.UseVisualStyleBackColor = true;
+            this.BTN_AfficherJournalJ2.Click += new System.EventHandler(this.BTN_AfficherJournalJ2_Click);
             // 
             // LB_Points_J1
             // 
