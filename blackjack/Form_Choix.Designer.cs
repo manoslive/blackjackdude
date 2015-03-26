@@ -129,6 +129,7 @@
             this.RB_J1_Courageux.TabStop = true;
             this.RB_J1_Courageux.Text = "Courageux";
             this.RB_J1_Courageux.UseVisualStyleBackColor = true;
+            this.RB_J1_Courageux.CheckedChanged += new System.EventHandler(this.RB_J1_Courageux_CheckedChanged);
             // 
             // RB_J1_Moyen
             // 
@@ -141,6 +142,7 @@
             this.RB_J1_Moyen.TabStop = true;
             this.RB_J1_Moyen.Text = "Moyen";
             this.RB_J1_Moyen.UseVisualStyleBackColor = true;
+            this.RB_J1_Moyen.CheckedChanged += new System.EventHandler(this.RB_J1_Moyen_CheckedChanged);
             // 
             // RB_J1_Prudent
             // 
@@ -153,6 +155,7 @@
             this.RB_J1_Prudent.TabStop = true;
             this.RB_J1_Prudent.Text = "Prudent";
             this.RB_J1_Prudent.UseVisualStyleBackColor = true;
+            this.RB_J1_Prudent.CheckedChanged += new System.EventHandler(this.RB_J1_Prudent_CheckedChanged);
             // 
             // GB_J1_TypeJoueur
             // 
@@ -247,6 +250,7 @@
             this.RB_J2_Courageux.TabStop = true;
             this.RB_J2_Courageux.Text = "Courageux";
             this.RB_J2_Courageux.UseVisualStyleBackColor = true;
+            this.RB_J2_Courageux.CheckedChanged += new System.EventHandler(this.RB_J2_Courageux_CheckedChanged);
             // 
             // RB_J2_Moyen
             // 
@@ -259,6 +263,7 @@
             this.RB_J2_Moyen.TabStop = true;
             this.RB_J2_Moyen.Text = "Moyen";
             this.RB_J2_Moyen.UseVisualStyleBackColor = true;
+            this.RB_J2_Moyen.CheckedChanged += new System.EventHandler(this.RB_J2_Moyen_CheckedChanged);
             // 
             // RB_J2_Prudent
             // 
@@ -271,6 +276,7 @@
             this.RB_J2_Prudent.TabStop = true;
             this.RB_J2_Prudent.Text = "Prudent";
             this.RB_J2_Prudent.UseVisualStyleBackColor = true;
+            this.RB_J2_Prudent.CheckedChanged += new System.EventHandler(this.RB_J2_Prudent_CheckedChanged);
             // 
             // GB_J2_TypeJoueur
             // 
