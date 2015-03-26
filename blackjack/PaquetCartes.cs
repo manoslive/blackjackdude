@@ -24,9 +24,9 @@ namespace blackjack
             const int NBTYPECARTES = 4;
             const int NBCARTESPARTYPE = 13;
 
-            for (int i = 0; i < NBTYPECARTES; i++)
+            for (int i = 1; i <= NBTYPECARTES; i++)
             {
-                for (int j = 0; j < NBCARTESPARTYPE; j++)
+                for (int j = 1; j <= NBCARTESPARTYPE; j++)
                 {
                     Paquet.Add(new Carte(j, i));
                 }
