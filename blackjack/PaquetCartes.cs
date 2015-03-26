@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace blackjack
 {
-    class PaquetCartes
+    public class PaquetCartes
     {
         private static Random rnd = new Random();
         private List<Carte> Paquet = new List<Carte>();

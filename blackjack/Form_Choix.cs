@@ -14,15 +14,15 @@ namespace blackjack
     {
         public bool joueur1_EstCompter { get; set; }
         public bool joueur2_EstCompter { get; set; }
-        public Joueur.niveauIA J1niveau { get; set; }
-        public Joueur.niveauIA J2niveau { get; set; }
+        Joueur.niveauIA J1Niveau { get; set; }
+        Joueur.niveauIA J2_niveau { get; set; }
 
 
         public Form_Choix()
         {
             InitializeComponent();
-            J1niveau = Joueur.niveauIA.Aucun;
-            J2niveau = Joueur.niveauIA.Aucun;
+            J1Niveau = Joueur.niveauIA.Aucun;
+            J2_niveau = Joueur.niveauIA.Aucun;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -78,8 +78,8 @@ namespace blackjack
         {
             this.Hide();
 
-            Form_Jouer jouer = new Form_Jouer(RB_J1_IA.Checked, J1niveau, joueur1_EstCompter,
-                                              RB_J2_IA.Checked, J2niveau, joueur2_EstCompter);
+            Form_Jouer jouer = new Form_Jouer(RB_J1_IA.Checked, J1Niveau, joueur1_EstCompter,
+                                              RB_J2_IA.Checked, J2_niveau, joueur2_EstCompter);
             jouer.callBackForm = this;
             jouer.ShowDialog();
         }
@@ -107,32 +107,32 @@ namespace blackjack
 
         private void RB_J1_Prudent_CheckedChanged(object sender, EventArgs e)
         {
-            J1niveau = Joueur.niveauIA.Prudent;
+            J1Niveau = Joueur.niveauIA.Prudent;
         }
 
         private void RB_J1_Moyen_CheckedChanged(object sender, EventArgs e)
         {
-            J1niveau = Joueur.niveauIA.Moyen;
+            J1Niveau = Joueur.niveauIA.Moyen;
         }
 
         private void RB_J1_Courageux_CheckedChanged(object sender, EventArgs e)
         {
-            J1niveau = Joueur.niveauIA.Courageux;
+            J1Niveau = Joueur.niveauIA.Courageux;
         }
 
         private void RB_J2_Prudent_CheckedChanged(object sender, EventArgs e)
         {
-            J2niveau = Joueur.niveauIA.Prudent;
+            J2_niveau = Joueur.niveauIA.Prudent;
         }
 
         private void RB_J2_Moyen_CheckedChanged(object sender, EventArgs e)
         {
-            J2niveau = Joueur.niveauIA.Moyen;
+            J2_niveau = Joueur.niveauIA.Moyen;
         }
 
         private void RB_J2_Courageux_CheckedChanged(object sender, EventArgs e)
         {
-            J2niveau = Joueur.niveauIA.Courageux;
+            J2_niveau = Joueur.niveauIA.Courageux;
         }
     }
 }

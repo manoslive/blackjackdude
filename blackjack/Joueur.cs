@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace blackjack
 {
 
-    class Joueur
+    public class Joueur
     {
         // Attributs
         public enum niveauIA { Prudent = 80, Moyen = 65, Courageux = 50, Aucun = 0 };

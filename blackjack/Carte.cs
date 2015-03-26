@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace blackjack
 {
-    class Carte
+    public class Carte
     {
         // Attributs
         public titre _valeur;
