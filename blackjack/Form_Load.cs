@@ -42,8 +42,6 @@ namespace blackjack
                 this.Hide();
                 Form_Choix choix = new Form_Choix();
                 choix.ShowDialog();
-
-
             }
         }
 
