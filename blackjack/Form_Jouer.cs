@@ -97,10 +97,11 @@ namespace blackjack
 
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
-            if(numCarteJ1==0)
+            if (numCarteJ1 == 0)
             {
                 PigerCarteJ1();
                 PigerCarteJ1();
+                FB_PasserJ1.Visible = true;
             }
             else
                 PigerCarteJ1();
@@ -147,16 +148,15 @@ namespace blackjack
         }
 
         private void FB_PigerJ2_Click(object sender, EventArgs e)
-        {  
-                if (numCarteJ2 == 0)
-                {
-                    PigerCarteJ2();
-                    PigerCarteJ2();
-                }
-                else
-                    PigerCarteJ2();
-
-               //  ChangerTour(joueur1);
+        {
+            if (numCarteJ2 == 0)
+            {
+                PigerCarteJ2();
+                PigerCarteJ2();
+                FB_PasserJ2.Visible = true;
+            }
+            else
+                PigerCarteJ2();
         }
         private void CalculerPointsJ2()
         {
@@ -181,7 +181,7 @@ namespace blackjack
             {
                 tempLocation = listCarteJ2[numCarteJ2 - 1].Location;
                 listCarteJ2[numCarteJ2].Location = new Point(tempLocation.X + 50, tempLocation.Y);
-            }           
+            }
             listCarteJ2[numCarteJ2].BackgroundImageLayout = ImageLayout.Stretch;
             this.Controls.Add(listCarteJ2[numCarteJ2]);
             listCarteJ2[numCarteJ2].BringToFront();
@@ -199,15 +199,26 @@ namespace blackjack
 
         private void FB_PasserJ1_Click(object sender, EventArgs e)
         {
-            if(numCarteJ1 < 2)
+            if (numCarteJ1 < 2)
                 joueur1._AFini = true;
-                // ChangerTour(joueur2);
+
+            ChangerTour(joueur2);
         }
 
         private void FB_PasserJ2_Click(object sender, EventArgs e)
         {
-                joueur2._AFini = true;
-                // ChangerTour(joueur1);
+            joueur2._AFini = true;
+            VerfierGagnant();
         }
+        private void VerfierGagnant()
+        {
+            if(Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
+                MessageBox.Show("Le Joueur1 a gagné");
+            else if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
+                MessageBox.Show("Le Joueur2 a gagné");
+            else
+                MessageBox.Show("Partie nulle");
+        }
+
     }
 }
