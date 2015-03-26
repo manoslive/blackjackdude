@@ -39,8 +39,6 @@ namespace blackjack
             if(PG_Load.Value == PG_Load.Maximum && waitTime == 30)
             {
                 Timer_Loading.Stop();
-                Form_Choix choix = new Form_Choix();
-                choix.ShowDialog();
                 this.Close();
             }
         }
@@ -56,6 +54,12 @@ namespace blackjack
         private void Form_Load_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void Form_Load_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form_Choix choix = new Form_Choix();
+            choix.ShowDialog();
         }
     }
 }

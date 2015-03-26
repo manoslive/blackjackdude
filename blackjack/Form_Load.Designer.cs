@@ -58,6 +58,7 @@
             this.Name = "Form_Load";
             this.Text = "Form_Load";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Load_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Load_FormClosed);
             this.Load += new System.EventHandler(this.Form_Load_Load);
             this.ResumeLayout(false);
 

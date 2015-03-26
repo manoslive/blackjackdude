@@ -347,6 +347,7 @@
             this.Name = "Form_Choix";
             this.Text = "BlackJack";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Choix_FormClosed);
+            this.Load += new System.EventHandler(this.Form_Choix_Load);
             this.GB_Joueur1.ResumeLayout(false);
             this.GB_J1_TypeIA.ResumeLayout(false);
             this.GB_J1_TypeIA.PerformLayout();

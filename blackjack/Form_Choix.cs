@@ -139,5 +139,10 @@ namespace blackjack
         {
             Application.Exit();
         }
+
+        private void Form_Choix_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
