@@ -103,7 +103,7 @@
             // 
             this.PB_J1_Carte1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PB_J1_Carte1.ImageLocation = "";
-            this.PB_J1_Carte1.Location = new System.Drawing.Point(199, -34);
+            this.PB_J1_Carte1.Location = new System.Drawing.Point(177, -2);
             this.PB_J1_Carte1.Name = "PB_J1_Carte1";
             this.PB_J1_Carte1.Size = new System.Drawing.Size(76, 87);
             this.PB_J1_Carte1.TabIndex = 0;

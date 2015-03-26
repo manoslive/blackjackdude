@@ -70,6 +70,7 @@ namespace blackjack
             listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
             listCarteJ1[numCarte].Location = new Point(tempLocation.X + 50, tempLocation.Y);
             listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;
+            listCarteJ1[numCarte].BackColor = Color.Red;
             listCarteJ1[numCarte].Show();
             numCarte++;
 
