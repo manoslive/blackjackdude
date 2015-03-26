@@ -13,13 +13,26 @@ namespace blackjack
     public partial class Form_Jouer : Form
     {
         public Form callBackForm = null;
-        Joueur joueur1 = new Joueur();
-        Joueur joueur2 = new Joueur();
-        PaquetCartes lePaquet = null;
-        public Form_Jouer()
+        Joueur joueur1 = null;
+        Joueur joueur2 = null;
+        PaquetCartes lePaquet = new PaquetCartes();
+
+        // Constructeurs paramétrique (2 joueurs IA)
+        public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
+                          bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
         {
             InitializeComponent();
+            if (!J1estIA)
+                joueur1 = new Joueur();
+            else
+                joueur1 = new Joueur(J1niveau, J1estCompter);
+
+            if (!J2estIA)
+                joueur2 = new Joueur();
+            else
+                joueur2 = new Joueur(J2niveau, J2estCompter);
         }
+
 
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
@@ -55,7 +68,6 @@ namespace blackjack
 
         private void Form_Jouer_Load(object sender, EventArgs e)
         {
-            lePaquet = new PaquetCartes();
         }
     }
 }

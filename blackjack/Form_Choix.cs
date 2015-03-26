@@ -12,13 +12,17 @@ namespace blackjack
 {
     public partial class Form_Choix : Form
     {
-        public bool joueur1_EstCompter {get; set;}
+        public bool joueur1_EstCompter { get; set; }
         public bool joueur2_EstCompter { get; set; }
+        public Joueur.niveauIA J1niveau { get; set; }
+        public Joueur.niveauIA J2niveau { get; set; }
 
 
         public Form_Choix()
         {
             InitializeComponent();
+            J1niveau = Joueur.niveauIA.Aucun;
+            J2niveau = Joueur.niveauIA.Aucun;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -73,7 +77,9 @@ namespace blackjack
         private void BTN_Jouer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Jouer jouer = new Form_Jouer();
+
+            Form_Jouer jouer = new Form_Jouer(RB_J1_IA.Checked, J1niveau, joueur1_EstCompter,
+                                              RB_J2_IA.Checked, J2niveau, joueur2_EstCompter);
             jouer.callBackForm = this;
             jouer.ShowDialog();
         }
@@ -97,6 +103,36 @@ namespace blackjack
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RB_J1_Prudent_CheckedChanged(object sender, EventArgs e)
+        {
+            J1niveau = Joueur.niveauIA.Prudent;
+        }
+
+        private void RB_J1_Moyen_CheckedChanged(object sender, EventArgs e)
+        {
+            J1niveau = Joueur.niveauIA.Moyen;
+        }
+
+        private void RB_J1_Courageux_CheckedChanged(object sender, EventArgs e)
+        {
+            J1niveau = Joueur.niveauIA.Courageux;
+        }
+
+        private void RB_J2_Prudent_CheckedChanged(object sender, EventArgs e)
+        {
+            J2niveau = Joueur.niveauIA.Prudent;
+        }
+
+        private void RB_J2_Moyen_CheckedChanged(object sender, EventArgs e)
+        {
+            J2niveau = Joueur.niveauIA.Moyen;
+        }
+
+        private void RB_J2_Courageux_CheckedChanged(object sender, EventArgs e)
+        {
+            J2niveau = Joueur.niveauIA.Courageux;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace blackjack
             _estIA = false;
             _AFini = false;
             _journal = new List<string>();
+            _nbPoints = 0;
         }
         // Constructeur avec paramètres
         public Joueur(niveauIA niveau, bool comptage)
@@ -32,6 +33,8 @@ namespace blackjack
             _estIA = true;
             _niveauIA = niveau;
             _comptage = comptage;
+            _journal = new List<string>();
+            _nbPoints = 0;
         }
         // Vérifie selon le niveau de l'IA s'il peut piger une carte
         public bool PigeCarte(double possibiliteDeNePasBuster)
