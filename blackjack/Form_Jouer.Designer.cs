@@ -178,7 +178,7 @@
             // LB_Points_J1
             // 
             this.LB_Points_J1.AutoSize = true;
-            this.LB_Points_J1.Location = new System.Drawing.Point(91, 88);
+            this.LB_Points_J1.Location = new System.Drawing.Point(136, 135);
             this.LB_Points_J1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.LB_Points_J1.Name = "LB_Points_J1";
             this.LB_Points_J1.Size = new System.Drawing.Size(0, 13);
