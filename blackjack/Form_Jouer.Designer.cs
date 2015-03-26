@@ -182,12 +182,13 @@
             // 
             // BTN_Annuler
             // 
-            this.BTN_Annuler.Location = new System.Drawing.Point(489, 582);
+            this.BTN_Annuler.Location = new System.Drawing.Point(450, 582);
             this.BTN_Annuler.Name = "BTN_Annuler";
-            this.BTN_Annuler.Size = new System.Drawing.Size(104, 35);
+            this.BTN_Annuler.Size = new System.Drawing.Size(143, 35);
             this.BTN_Annuler.TabIndex = 5;
-            this.BTN_Annuler.Text = "Annuler";
+            this.BTN_Annuler.Text = "Nouvelle partie";
             this.BTN_Annuler.UseVisualStyleBackColor = true;
+            this.BTN_Annuler.Click += new System.EventHandler(this.BTN_Annuler_Click);
             // 
             // BTN_AfficherJournalJ1
             // 
