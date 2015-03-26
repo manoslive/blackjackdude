@@ -169,9 +169,8 @@
             this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flashButton1.ImageClick = null;
             this.flashButton1.ImageDisable = null;
-            this.flashButton1.ImageNeutral = global::blackjack.Properties.Resources.jouer_default;
             this.flashButton1.ImageOver = null;
-            this.flashButton1.Location = new System.Drawing.Point(16, 27);
+            this.flashButton1.Location = new System.Drawing.Point(16, 37);
             this.flashButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flashButton1.Name = "flashButton1";
             this.flashButton1.Size = new System.Drawing.Size(87, 87);
