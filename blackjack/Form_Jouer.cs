@@ -59,30 +59,7 @@ namespace blackjack
 
         private void flashButton1_Click(object sender, EventArgs e)
         {
-            Point locationInitial = new Point(this.Size.Width/2 - 35, 40);
-            Point tempLocation = new Point(0,0);
-            int Points = 0;   
-            if (listCarteJ1.Count <= 0)
-                tempLocation = locationInitial;
-            else 
-                tempLocation = listCarteJ1[numCarte-1].Location;
-            listCarteJ1.Add(new PictureBox());
-            listCarteJ1[numCarte].Size = new System.Drawing.Size(70,90);
-            listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
-            listCarteJ1[numCarte].Location = new Point(tempLocation.X + 50, tempLocation.Y);
-            listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;
-            this.Controls.Add(listCarteJ1[numCarte]);
-            listCarteJ1[numCarte].BringToFront();
-            for (int i = 0; i < listCarteJ1.Count;i++ )
-            {
-                listCarteJ1[i].Location = new Point(tempLocation.X - 35, tempLocation.Y);
-                listCarteJ1[i].BringToFront();
-            }
-            numCarte++;
 
-            if (LB_Points_J1.Text.Length > 0)
-                Points = Convert.ToInt32(LB_Points_J1.Text);
-            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
 
         }
 
@@ -101,6 +78,34 @@ namespace blackjack
             {
 
             }
+        }
+
+        private void FB_PigerJ1_Click(object sender, EventArgs e)
+        {
+            Point locationInitial = new Point(this.Size.Width / 2 - 35, 40);
+            Point tempLocation = new Point(0, 0);
+            int Points = 0;
+            if (listCarteJ1.Count <= 0)
+                tempLocation = locationInitial;
+            else
+                tempLocation = listCarteJ1[numCarte - 1].Location;
+            listCarteJ1.Add(new PictureBox());
+            listCarteJ1[numCarte].Size = new System.Drawing.Size(70, 90);
+            listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
+            listCarteJ1[numCarte].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            listCarteJ1[numCarte].BackgroundImageLayout = ImageLayout.Stretch;
+            this.Controls.Add(listCarteJ1[numCarte]);
+            listCarteJ1[numCarte].BringToFront();
+            for (int i = 0; i < listCarteJ1.Count; i++)
+            {
+                listCarteJ1[i].Location = new Point(tempLocation.X - 35, tempLocation.Y);
+                listCarteJ1[i].BringToFront();
+            }
+            numCarte++;
+
+            if (LB_Points_J1.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J1.Text);
+            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
         }
     }
 }
