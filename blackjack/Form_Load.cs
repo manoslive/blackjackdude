@@ -39,9 +39,9 @@ namespace blackjack
             if(PG_Load.Value == PG_Load.Maximum && waitTime == 30)
             {
                 Timer_Loading.Stop();
-                this.Close();
                 Form_Choix choix = new Form_Choix();
                 choix.ShowDialog();
+                this.Close();
             }
         }
 

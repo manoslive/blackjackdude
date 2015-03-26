@@ -46,9 +46,15 @@
             this.BTN_AfficherJournalJ2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LB_Points_J1 = new System.Windows.Forms.Label();
+            this.FB_JouerJ1 = new FlashButton.FlashButton();
+            this.FB_JouerJ2 = new FlashButton.FlashButton();
+            this.flashButton2 = new FlashButton.FlashButton();
+            this.flashButton3 = new FlashButton.FlashButton();
             this.PN_Joueur1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).BeginInit();
+            this.GB_OptionJoueur2.SuspendLayout();
+            this.GB_OptionJoueur1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +137,8 @@
             // 
             // GB_OptionJoueur2
             // 
+            this.GB_OptionJoueur2.Controls.Add(this.flashButton3);
+            this.GB_OptionJoueur2.Controls.Add(this.FB_JouerJ2);
             this.GB_OptionJoueur2.Location = new System.Drawing.Point(510, 245);
             this.GB_OptionJoueur2.Name = "GB_OptionJoueur2";
             this.GB_OptionJoueur2.Size = new System.Drawing.Size(282, 142);
@@ -140,6 +148,8 @@
             // 
             // GB_OptionJoueur1
             // 
+            this.GB_OptionJoueur1.Controls.Add(this.flashButton2);
+            this.GB_OptionJoueur1.Controls.Add(this.FB_JouerJ1);
             this.GB_OptionJoueur1.Location = new System.Drawing.Point(69, 245);
             this.GB_OptionJoueur1.Name = "GB_OptionJoueur1";
             this.GB_OptionJoueur1.Size = new System.Drawing.Size(282, 142);
@@ -227,6 +237,66 @@
             this.LB_Points_J1.Size = new System.Drawing.Size(0, 20);
             this.LB_Points_J1.TabIndex = 6;
             // 
+            // FB_JouerJ1
+            // 
+            this.FB_JouerJ1.BackgroundImage = global::blackjack.Properties.Resources.jouer_click;
+            this.FB_JouerJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_JouerJ1.ImageClick = global::blackjack.Properties.Resources.jouer_default;
+            this.FB_JouerJ1.ImageDisable = null;
+            this.FB_JouerJ1.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
+            this.FB_JouerJ1.ImageOver = null;
+            this.FB_JouerJ1.Location = new System.Drawing.Point(30, 30);
+            this.FB_JouerJ1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.FB_JouerJ1.Name = "FB_JouerJ1";
+            this.FB_JouerJ1.Size = new System.Drawing.Size(87, 88);
+            this.FB_JouerJ1.TabIndex = 1;
+            this.FB_JouerJ1.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
+            // FB_JouerJ2
+            // 
+            this.FB_JouerJ2.BackgroundImage = global::blackjack.Properties.Resources.jouer_click;
+            this.FB_JouerJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_JouerJ2.ImageClick = global::blackjack.Properties.Resources.jouer_default;
+            this.FB_JouerJ2.ImageDisable = null;
+            this.FB_JouerJ2.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
+            this.FB_JouerJ2.ImageOver = null;
+            this.FB_JouerJ2.Location = new System.Drawing.Point(26, 30);
+            this.FB_JouerJ2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.FB_JouerJ2.Name = "FB_JouerJ2";
+            this.FB_JouerJ2.Size = new System.Drawing.Size(87, 88);
+            this.FB_JouerJ2.TabIndex = 1;
+            this.FB_JouerJ2.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
+            // flashButton2
+            // 
+            this.flashButton2.BackgroundImage = global::blackjack.Properties.Resources.no_deal_default;
+            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton2.ImageClick = global::blackjack.Properties.Resources.jouer_default;
+            this.flashButton2.ImageDisable = null;
+            this.flashButton2.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
+            this.flashButton2.ImageOver = null;
+            this.flashButton2.Location = new System.Drawing.Point(158, 30);
+            this.flashButton2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.flashButton2.Name = "flashButton2";
+            this.flashButton2.Size = new System.Drawing.Size(87, 88);
+            this.flashButton2.TabIndex = 1;
+            this.flashButton2.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
+            // flashButton3
+            // 
+            this.flashButton3.BackgroundImage = global::blackjack.Properties.Resources.jouer_click;
+            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flashButton3.ImageClick = global::blackjack.Properties.Resources.jouer_default;
+            this.flashButton3.ImageDisable = null;
+            this.flashButton3.ImageNeutral = global::blackjack.Properties.Resources.jouer_click;
+            this.flashButton3.ImageOver = null;
+            this.flashButton3.Location = new System.Drawing.Point(157, 30);
+            this.flashButton3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.flashButton3.Name = "flashButton3";
+            this.flashButton3.Size = new System.Drawing.Size(87, 88);
+            this.flashButton3.TabIndex = 1;
+            this.flashButton3.Click += new System.EventHandler(this.flashButton1_Click);
+            // 
             // Form_Jouer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -255,6 +325,8 @@
             this.PN_Joueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_J1_Carte1)).EndInit();
+            this.GB_OptionJoueur2.ResumeLayout(false);
+            this.GB_OptionJoueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -281,5 +353,9 @@
         private System.Windows.Forms.PictureBox PB_J1_Carte2;
         private System.Windows.Forms.PictureBox PB_J1_Carte1;
         private System.Windows.Forms.Label LB_Points_J1;
+        private FlashButton.FlashButton flashButton3;
+        private FlashButton.FlashButton FB_JouerJ2;
+        private FlashButton.FlashButton flashButton2;
+        private FlashButton.FlashButton FB_JouerJ1;
     }
 }

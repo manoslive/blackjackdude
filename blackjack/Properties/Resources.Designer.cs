@@ -93,6 +93,16 @@ namespace blackjack.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_deal_default {
+            get {
+                object obj = ResourceManager.GetObject("no_deal_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Versus {
             get {
                 object obj = ResourceManager.GetObject("Versus", resourceCulture);
