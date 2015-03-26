@@ -41,9 +41,9 @@ namespace blackjack
 
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (callBackForm != null)
-                callBackForm.Show();
-            else
+            //if (callBackForm != null)
+            //    callBackForm.Show();
+            //else
                 Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
         }
 
