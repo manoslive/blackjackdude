@@ -61,6 +61,12 @@
     <Compile Include="Form_Jouer.Designer.cs">
       <DependentUpon>Form_Jouer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Journal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Journal.Designer.cs">
+      <DependentUpon>Form_Journal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Jouer.resx">
       <DependentUpon>Form_Jouer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Journal.resx">
+      <DependentUpon>Form_Journal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>

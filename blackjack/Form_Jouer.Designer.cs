@@ -156,6 +156,7 @@
             this.BTN_AfficherJournalJ1.TabIndex = 5;
             this.BTN_AfficherJournalJ1.Text = "Journal J1";
             this.BTN_AfficherJournalJ1.UseVisualStyleBackColor = true;
+            this.BTN_AfficherJournalJ1.Click += new System.EventHandler(this.BTN_AfficherJournalJ1_Click);
             // 
             // BTN_AfficherJournalJ2
             // 
@@ -211,7 +212,7 @@
             this.Controls.Add(this.LB_Joueur1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form_Jouer";
-            this.Text = "Form_Jouer";
+            this.Text = "Jouer le jeu qui joue";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Jouer_FormClosed);
             this.GB_OptionJoueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

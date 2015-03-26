@@ -12,6 +12,9 @@ namespace blackjack
 {
     public partial class Form_Jouer : Form
     {
+        public Form callBackForm = null;
+        Joueur joueur1 = new Joueur();
+        Joueur joueur2 = new Joueur();
         public Form_Jouer()
         {
             InitializeComponent();
@@ -19,12 +22,26 @@ namespace blackjack
 
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (callBackForm != null)
+                callBackForm.Show();
+            else
+                Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
         }
 
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
+            if (callBackForm != null)
+                callBackForm.Show();
+            else
+                Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
+        }
+
+        private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Journal journalj1 = new Form_Journal(joueur1._journal);
+            journalj1.callBackForm = this;
+            journalj1.ShowDialog();
         }
     }
 }
