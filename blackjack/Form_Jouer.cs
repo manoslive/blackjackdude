@@ -195,7 +195,6 @@ namespace blackjack
             }
             numCarteJ2++;
             CalculerPointsJ2();
-
         }
 
         private void FB_PasserJ1_Click(object sender, EventArgs e)
