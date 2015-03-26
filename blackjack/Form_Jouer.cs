@@ -66,7 +66,10 @@ namespace blackjack
 
         private void Form_Jouer_Load(object sender, EventArgs e)
         {
-            ChangerTour(joueur1);
+            FB_PigerJ1.Visible = true;
+            FB_PasserJ1.Visible = false;
+            FB_PasserJ2.Visible = false;
+            FB_PigerJ2.Visible = false;
 
         }
         private void ChangerTour(Joueur aQuelJoueurEstLeTour)
@@ -91,27 +94,17 @@ namespace blackjack
         {
 
         }
-        private void CheckWin()
-        {
-            int ptsJ1 = Convert.ToInt32(LB_Points_J1.Text);
-            while (!joueur1._AFini)
-            {
-
-            }
-        }
 
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
-            if (!joueur1._AFini)
-            {
+
                 int Points = 0;
                 PigerCarteJ1();
                 if (LB_Points_J1.Text.Length > 0)
                     Points = Convert.ToInt32(LB_Points_J1.Text);
                 LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
 
-                ChangerTour(joueur2);
-            }
+               // ChangerTour(joueur2);
         }
         public void PigerCarteJ1()
         {
@@ -147,16 +140,13 @@ namespace blackjack
 
         private void FB_PigerJ2_Click(object sender, EventArgs e)
         {
-            if (!joueur2._AFini)
-            {
                 int Points = 0;
                 PigerCarteJ2();
                 if (LB_Points_J2.Text.Length > 0)
                     Points = Convert.ToInt32(LB_Points_J2.Text);
                 LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
 
-                ChangerTour(joueur1);
-            }
+               //  ChangerTour(joueur1);
         }
 
         public void PigerCarteJ2()
@@ -192,20 +182,15 @@ namespace blackjack
 
         private void FB_PasserJ1_Click(object sender, EventArgs e)
         {
-            if (!joueur1._AFini)
-            {
+            if(numCarteJ1 < 2)
                 joueur1._AFini = true;
-                ChangerTour(joueur2);
-            }
+                // ChangerTour(joueur2);
         }
 
         private void FB_PasserJ2_Click(object sender, EventArgs e)
         {
-            if (!joueur2._AFini)
-            {
                 joueur2._AFini = true;
-                ChangerTour(joueur1);
-            }
+                // ChangerTour(joueur1);
         }
     }
 }
