@@ -50,7 +50,7 @@ namespace blackjack
         // Obtient l'url complet de l'image de la carte
         public string getURLCarte()
         {
-            string dossier = "~/PaquetDeCartes/", typeImage = ".png";
+            string dossier = "..\\..\\PaquetDeCartes\\", typeImage = ".png";
             return dossier + (int)_valeur + getTypeUrlChunk(_type) + typeImage;
         }
         // Obtient une partie de l'url selon le type
