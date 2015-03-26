@@ -63,8 +63,8 @@ namespace blackjack
             int Points = 0;
             PB_J1_Carte1.BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
             PB_J1_Carte1.BackgroundImageLayout = ImageLayout.Stretch;
-            Points = Convert.ToInt32(LB_Points_J1.Text);
-            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
+            //Points = Convert.ToInt32(LB_Points_J1.Text);
+            LB_Points_J1.Text = (lePaquet.GetValeur()).ToString();
 
         }
 
