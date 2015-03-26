@@ -21,6 +21,7 @@ namespace blackjack
         public int numCarteJ1 = 0;//num de carte pigé
         List<PictureBox> listCarteJ2 = new List<PictureBox>();
         public int numCarteJ2 = 0;//num de carte pigé
+        List<int> listCarteEnJeu = new List<int>();
         // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
@@ -112,7 +113,7 @@ namespace blackjack
             if (LB_Points_J1.Text.Length > 0)
                 Points = Convert.ToInt32(LB_Points_J1.Text);
             LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
-
+            listCarteEnJeu.Add(lePaquet.GetValeur());
             if (Convert.ToInt32(LB_Points_J1.Text) == 21)
             {
                 MessageBox.Show("BlackJack!");
@@ -172,7 +173,7 @@ namespace blackjack
             if (LB_Points_J2.Text.Length > 0)
                 Points = Convert.ToInt32(LB_Points_J2.Text);
             LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
-
+            listCarteEnJeu.Add(lePaquet.GetValeur());
             if (Convert.ToInt32(LB_Points_J2.Text) == 21)
             {
                 MessageBox.Show("BlackJack!");
@@ -273,6 +274,7 @@ namespace blackjack
             }
             listCarteJ1.Clear();
             listCarteJ2.Clear();
+            listCarteEnJeu.Clear();
             FB_PigerJ1.Visible = true;
             BTN_Annuler.Visible = true;
             numCarteJ1 = 0;
@@ -286,6 +288,22 @@ namespace blackjack
             nouvellePartie = true;
             this.Hide();
             this.Close();
+        }
+        private void CalculerProb() /////////////////////////////////////à finaliser et pluger qqpart
+        {
+            int compteur = 21 - Convert.ToInt32(LB_Points_J1.Text);
+            for (int i = 1; i <= 21 - Convert.ToInt32(LB_Points_J1.Text); i++)
+            {
+                for (int j = 0; j < listCarteEnJeu.Count; i++)
+                {
+                    if (listCarteEnJeu[j] == i)
+                    {
+                        compteur--;
+                    }
+                }
+            }
+            int nombreCarteRestante = 52 - listCarteEnJeu.Count;
+            int probPasDepasser = (compteur / nombreCarteRestante) * 100;
         }
     }
 }
