@@ -278,6 +278,7 @@ namespace blackjack
             listCarteJ1.Clear();
             listCarteJ2.Clear();
             FB_PigerJ1.Visible = true;
+            BTN_Annuler.Visible = true;
             numCarteJ1 = 0;
             numCarteJ2 = 0;
             LB_Points_J1.Text = "";
