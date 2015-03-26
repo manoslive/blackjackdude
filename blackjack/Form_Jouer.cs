@@ -93,22 +93,31 @@ namespace blackjack
         {
             Point locationInitial = new Point(this.Size.Width / 2 - 35, 40);
             Point tempLocation = new Point(0, 0);
-            if (listCarteJ1.Count <= 0)
-                tempLocation = locationInitial;
-            else
-                tempLocation = listCarteJ1[numCarteJ1 - 1].Location;
             listCarteJ1.Add(new PictureBox());
             listCarteJ1[numCarteJ1].Size = new System.Drawing.Size(70, 90);
             listCarteJ1[numCarteJ1].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
-            listCarteJ1[numCarteJ1].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            if (listCarteJ1.Count <= 1)
+            {
+                tempLocation = locationInitial;
+                listCarteJ1[numCarteJ1].Location = new Point(tempLocation.X, tempLocation.Y);
+            }
+            else
+            {
+                tempLocation = listCarteJ1[numCarteJ1 - 1].Location;
+                listCarteJ1[numCarteJ1].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            }   
             listCarteJ1[numCarteJ1].BackgroundImageLayout = ImageLayout.Stretch;
             this.Controls.Add(listCarteJ1[numCarteJ1]);
             listCarteJ1[numCarteJ1].BringToFront();
-            for (int i = 0; i < listCarteJ1.Count; i++)
+            if (listCarteJ1.Count > 1)
             {
-                listCarteJ1[i].Location = new Point(tempLocation.X - 35, tempLocation.Y);
-                this.Controls.Add(listCarteJ1[i]);
+                for (int i = 0; i < listCarteJ1.Count; i++)
+                {
+                    listCarteJ1[i].Location = new Point(listCarteJ1[i].Location.X - 25, listCarteJ1[i].Location.Y);
+                    listCarteJ1[i].BringToFront();
+                }
             }
+
             numCarteJ1++;
         }
 
@@ -125,21 +134,29 @@ namespace blackjack
         {
             Point locationInitial = new Point(this.Size.Width / 2 - 35, 280);
             Point tempLocation = new Point(0, 0);
-            if (listCarteJ2.Count <= 0)
-                tempLocation = locationInitial;
-            else
-                tempLocation = listCarteJ2[numCarteJ2 - 1].Location;
             listCarteJ2.Add(new PictureBox());
             listCarteJ2[numCarteJ2].Size = new System.Drawing.Size(70, 90);
             listCarteJ2[numCarteJ2].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
-            listCarteJ2[numCarteJ2].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            if (listCarteJ2.Count <= 1)
+            {
+                tempLocation = locationInitial;
+                listCarteJ2[numCarteJ2].Location = new Point(tempLocation.X, tempLocation.Y);
+            }
+            else
+            {
+                tempLocation = listCarteJ2[numCarteJ2 - 1].Location;
+                listCarteJ2[numCarteJ2].Location = new Point(tempLocation.X + 50, tempLocation.Y);
+            }           
             listCarteJ2[numCarteJ2].BackgroundImageLayout = ImageLayout.Stretch;
             this.Controls.Add(listCarteJ2[numCarteJ2]);
             listCarteJ2[numCarteJ2].BringToFront();
-            for (int i = 0; i < listCarteJ2.Count; i++)
+            if (listCarteJ2.Count > 1)
             {
-                listCarteJ2[i].Location = new Point(tempLocation.X - 35, tempLocation.Y);
-                this.Controls.Add(listCarteJ2[i]);
+                for (int i = 0; i < listCarteJ2.Count; i++)
+                {
+                    listCarteJ2[i].Location = new Point(listCarteJ2[i].Location.X - 25, listCarteJ2[i].Location.Y);
+                    listCarteJ2[i].BringToFront();
+                }
             }
             numCarteJ2++;
         }
