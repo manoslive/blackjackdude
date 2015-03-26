@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="check_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piger_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piger_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jouer_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jouer_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Versus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Versus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,7 +136,10 @@
   <data name="jouer_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jouer_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jouer_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jouer_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="piger_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\piger_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

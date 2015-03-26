@@ -63,6 +63,26 @@ namespace blackjack.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_click {
+            get {
+                object obj = ResourceManager.GetObject("check_click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_default {
+            get {
+                object obj = ResourceManager.GetObject("check_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jouer_click {
             get {
                 object obj = ResourceManager.GetObject("jouer_click", resourceCulture);
@@ -86,6 +106,26 @@ namespace blackjack.Properties {
         internal static System.Drawing.Bitmap Load_background {
             get {
                 object obj = ResourceManager.GetObject("Load_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap piger_click {
+            get {
+                object obj = ResourceManager.GetObject("piger_click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap piger_default {
+            get {
+                object obj = ResourceManager.GetObject("piger_default", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
