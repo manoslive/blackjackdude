@@ -38,7 +38,7 @@ namespace blackjack
 
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+            Application.Exit();
         }
 
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
@@ -46,7 +46,7 @@ namespace blackjack
             //if (callBackForm != null)
             //    callBackForm.Show();
             //else
-                Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
+            Application.Exit(); // Le processus ne voulait pas se terminer. J'ai du ajouter cette ligne
         }
 
         private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
@@ -60,11 +60,11 @@ namespace blackjack
         private void flashButton1_Click(object sender, EventArgs e)
         {
             Point locationInitial = new Point(0, 0);
-            Point tempLocation = new Point(0,0);
-            int Points = 0;   
-            if(listCarteJ1.Count <=0)
+            Point tempLocation = new Point(0, 0);
+            int Points = 0;
+            if (listCarteJ1.Count <= 0)
                 tempLocation = locationInitial;
-            else 
+            else
                 tempLocation = listCarteJ1[numCarte].Location;
             listCarteJ1.Add(new PictureBox());
             listCarteJ1[numCarte].BackgroundImage = Image.FromFile(lePaquet.PigerCarte());
@@ -82,6 +82,19 @@ namespace blackjack
 
         private void Form_Jouer_Load(object sender, EventArgs e)
         {
+        }
+
+        private void LB_Points_J1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void CheckWin()
+        {
+            int ptsJ1 = Convert.ToInt32(LB_Points_J1.Text);
+            while(!joueur1._AFini)
+            {
+
+            }
         }
     }
 }
