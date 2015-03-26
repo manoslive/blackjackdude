@@ -17,7 +17,7 @@ namespace blackjack
         Joueur joueur2 = null;
         PaquetCartes lePaquet = new PaquetCartes();
 
-        // Constructeurs paramétrique (2 joueurs IA)
+        // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
         {
