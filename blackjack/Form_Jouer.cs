@@ -52,7 +52,7 @@ namespace blackjack
 
         private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // this.Hide();
             Form_Journal journalj1 = new Form_Journal(joueur1._journal);
             journalj1.callBackForm = this;
             journalj1.ShowDialog();
@@ -219,7 +219,24 @@ namespace blackjack
                 MessageBox.Show("Le Joueur2 a gagné");
             else
                 MessageBox.Show("Partie nulle");
+
+            DisableButtons();
         }
 
+        private void BTN_AfficherJournalJ2_Click(object sender, EventArgs e)
+        {
+            // this.Hide();
+            Form_Journal journalj2 = new Form_Journal(joueur1._journal);
+            journalj2.callBackForm = this;
+            journalj2.ShowDialog();
+        }
+        private void DisableButtons()
+        {
+            FB_PasserJ2.Visible = false;
+            FB_PigerJ2.Visible = false;
+            FB_PasserJ1.Visible = false;
+            FB_PigerJ1.Visible = false;
+            BTN_Annuler.Visible = false;
+        }
     }
 }
