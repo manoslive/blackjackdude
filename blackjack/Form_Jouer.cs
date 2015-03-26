@@ -16,7 +16,7 @@ namespace blackjack
         Joueur joueur1 = null;
         Joueur joueur2 = null;
         bool nouvellePartie = false;
-        PaquetCartes lePaquet = new PaquetCartes();
+        PaquetCartes lePaquet = null;
         List<PictureBox> listCarteJ1 = new List<PictureBox>();
         public int numCarteJ1 = 0;//num de carte pigé
         List<PictureBox> listCarteJ2 = new List<PictureBox>();
@@ -26,6 +26,7 @@ namespace blackjack
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
         {
             InitializeComponent();
+            lePaquet = new PaquetCartes();
             if (!J1estIA)
                 joueur1 = new Joueur();
             else
@@ -59,12 +60,6 @@ namespace blackjack
             Form_Journal journalj1 = new Form_Journal(joueur1._journal);
             journalj1.callBackForm = this;
             journalj1.ShowDialog();
-        }
-
-        private void flashButton1_Click(object sender, EventArgs e)
-        {
-
-
         }
 
         private void Form_Jouer_Load(object sender, EventArgs e)
@@ -259,6 +254,7 @@ namespace blackjack
             FB_PasserJ1.Visible = false;
             FB_PigerJ1.Visible = false;
             BTN_Annuler.Visible = false;
+            lePaquet = new PaquetCartes();
         }
         private void BTN_Rejouer_Click(object sender, EventArgs e)
         {

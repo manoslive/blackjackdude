@@ -9,7 +9,7 @@ namespace blackjack
     public class PaquetCartes
     {
         private static Random rnd = new Random();
-        private List<Carte> Paquet = new List<Carte>();
+        public List<Carte> Paquet = new List<Carte>();
         private int cartePigé; //contient le numéro de la dernière carte pigé de la liste Paquet
 
         // Constructeur
@@ -37,7 +37,7 @@ namespace blackjack
         {
             cartePigé = rnd.Next(0, 52);
             string laCarte = Paquet[cartePigé].getURLCarte();
-            
+            Paquet.Remove(Paquet[cartePigé]);
             return laCarte;
         }
         // Obtient le numéro de la dernière carte pigée
