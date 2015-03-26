@@ -134,5 +134,10 @@ namespace blackjack
         {
             J2_niveau = Joueur.niveauIA.Courageux;
         }
+
+        private void Form_Choix_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
