@@ -228,7 +228,6 @@
             this.LB_Points_J1.Name = "LB_Points_J1";
             this.LB_Points_J1.Size = new System.Drawing.Size(0, 13);
             this.LB_Points_J1.TabIndex = 6;
-            this.LB_Points_J1.TextChanged += new System.EventHandler(this.LB_Points_J1_TextChanged);
             // 
             // LB_PointageJ2
             // 
