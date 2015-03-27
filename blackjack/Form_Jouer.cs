@@ -193,6 +193,7 @@ namespace blackjack
             if (Convert.ToInt32(LB_Points_J2.Text) == 21)
             {
                 MessageBox.Show("BlackJack!");
+                DisableButtons();
             }
             else if (Convert.ToInt32(LB_Points_J2.Text) > 21)
             {
@@ -318,7 +319,7 @@ namespace blackjack
             int compteur = 21 - Convert.ToInt32(LB_Points_J1.Text);
             for (int i = 1; i <= 21 - Convert.ToInt32(LB_Points_J1.Text); i++)
             {
-                for (int j = 0; j < listCarteEnJeu.Count; i++)
+                for (int j = 0; j < listCarteEnJeu.Count; j++)
                 {
                     if (listCarteEnJeu[j] == i)
                     {
@@ -347,7 +348,7 @@ namespace blackjack
         private void JouerTourIA(Joueur leIA)
         {
             if (leIA == joueur1)
-                if (CalculerProb(joueur1) >= Convert.ToDouble(leIA._niveauIA))
+                if (CalculerProb(joueur1) >= Convert.ToInt32(leIA._niveauIA))
                     PigerCarteJ1();
                 else
                     if (!joueur2._estIA)
@@ -355,7 +356,7 @@ namespace blackjack
                     else
                         JouerTourIA(joueur2);
             else if (leIA == joueur2)
-                if (CalculerProb(joueur2) >= Convert.ToDouble(leIA._niveauIA))
+                if (CalculerProb(joueur2) >= Convert.ToInt32(leIA._niveauIA))
                     PigerCarteJ2();
                 else
                     VerfierGagnant();
