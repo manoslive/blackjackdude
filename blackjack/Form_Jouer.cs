@@ -153,6 +153,7 @@ namespace blackjack
                 }
             }
             CalculerPointsJ1();
+            lePaquet.RemoveCarte();
             numCarteJ1++;
         }
 
@@ -214,6 +215,7 @@ namespace blackjack
             }
             numCarteJ2++;
             CalculerPointsJ2();
+            lePaquet.RemoveCarte();
         }
 
         private void FB_PasserJ1_Click(object sender, EventArgs e)
@@ -237,7 +239,6 @@ namespace blackjack
                 MessageBox.Show("Le Joueur2 a gagné");
             else
                 MessageBox.Show("Partie nulle");
-
             DisableButtons();
         }
 

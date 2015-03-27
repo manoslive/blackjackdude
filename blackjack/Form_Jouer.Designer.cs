@@ -32,11 +32,7 @@
             this.LB_Joueur2 = new System.Windows.Forms.Label();
             this.LB_PointageJ1 = new System.Windows.Forms.Label();
             this.GB_OptionJoueur2 = new System.Windows.Forms.GroupBox();
-            this.FB_PasserJ2 = new FlashButton.FlashButton();
-            this.FB_PigerJ2 = new FlashButton.FlashButton();
             this.GB_OptionJoueur1 = new System.Windows.Forms.GroupBox();
-            this.FB_PasserJ1 = new FlashButton.FlashButton();
-            this.FB_PigerJ1 = new FlashButton.FlashButton();
             this.BTN_Quitter = new System.Windows.Forms.Button();
             this.BTN_Rejouer = new System.Windows.Forms.Button();
             this.BTN_Annuler = new System.Windows.Forms.Button();
@@ -45,10 +41,16 @@
             this.LB_Points_J1 = new System.Windows.Forms.Label();
             this.LB_PointageJ2 = new System.Windows.Forms.Label();
             this.LB_Points_J2 = new System.Windows.Forms.Label();
+            this.FB_PasserJ1 = new FlashButton.FlashButton();
+            this.FB_PigerJ1 = new FlashButton.FlashButton();
+            this.FB_PasserJ2 = new FlashButton.FlashButton();
+            this.FB_PigerJ2 = new FlashButton.FlashButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PB_Banner = new System.Windows.Forms.PictureBox();
             this.GB_OptionJoueur2.SuspendLayout();
             this.GB_OptionJoueur1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Banner)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Joueur1
@@ -94,36 +96,6 @@
             this.GB_OptionJoueur2.TabStop = false;
             this.GB_OptionJoueur2.Text = "Option J2";
             // 
-            // FB_PasserJ2
-            // 
-            this.FB_PasserJ2.BackgroundImage = global::blackjack.Properties.Resources.check_default;
-            this.FB_PasserJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_PasserJ2.ImageClick = global::blackjack.Properties.Resources.check_click;
-            this.FB_PasserJ2.ImageDisable = null;
-            this.FB_PasserJ2.ImageNeutral = global::blackjack.Properties.Resources.check_default;
-            this.FB_PasserJ2.ImageOver = null;
-            this.FB_PasserJ2.Location = new System.Drawing.Point(100, 18);
-            this.FB_PasserJ2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FB_PasserJ2.Name = "FB_PasserJ2";
-            this.FB_PasserJ2.Size = new System.Drawing.Size(73, 67);
-            this.FB_PasserJ2.TabIndex = 0;
-            this.FB_PasserJ2.Click += new System.EventHandler(this.FB_PasserJ2_Click);
-            // 
-            // FB_PigerJ2
-            // 
-            this.FB_PigerJ2.BackgroundImage = global::blackjack.Properties.Resources.piger_click;
-            this.FB_PigerJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_PigerJ2.ImageClick = global::blackjack.Properties.Resources.piger_default;
-            this.FB_PigerJ2.ImageDisable = null;
-            this.FB_PigerJ2.ImageNeutral = global::blackjack.Properties.Resources.piger_click;
-            this.FB_PigerJ2.ImageOver = null;
-            this.FB_PigerJ2.Location = new System.Drawing.Point(13, 18);
-            this.FB_PigerJ2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FB_PigerJ2.Name = "FB_PigerJ2";
-            this.FB_PigerJ2.Size = new System.Drawing.Size(73, 67);
-            this.FB_PigerJ2.TabIndex = 0;
-            this.FB_PigerJ2.Click += new System.EventHandler(this.FB_PigerJ2_Click);
-            // 
             // GB_OptionJoueur1
             // 
             this.GB_OptionJoueur1.Controls.Add(this.FB_PasserJ1);
@@ -136,37 +108,6 @@
             this.GB_OptionJoueur1.TabIndex = 4;
             this.GB_OptionJoueur1.TabStop = false;
             this.GB_OptionJoueur1.Text = "Option J1";
-            // 
-            // FB_PasserJ1
-            // 
-            this.FB_PasserJ1.BackgroundImage = global::blackjack.Properties.Resources.check_default;
-            this.FB_PasserJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_PasserJ1.ImageClick = global::blackjack.Properties.Resources.check_click;
-            this.FB_PasserJ1.ImageDisable = null;
-            this.FB_PasserJ1.ImageNeutral = global::blackjack.Properties.Resources.check_default;
-            this.FB_PasserJ1.ImageOver = null;
-            this.FB_PasserJ1.Location = new System.Drawing.Point(99, 18);
-            this.FB_PasserJ1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FB_PasserJ1.Name = "FB_PasserJ1";
-            this.FB_PasserJ1.Size = new System.Drawing.Size(73, 67);
-            this.FB_PasserJ1.TabIndex = 0;
-            this.FB_PasserJ1.Click += new System.EventHandler(this.FB_PasserJ1_Click);
-            // 
-            // FB_PigerJ1
-            // 
-            this.FB_PigerJ1.BackgroundImage = global::blackjack.Properties.Resources.piger_click;
-            this.FB_PigerJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FB_PigerJ1.CausesValidation = false;
-            this.FB_PigerJ1.ImageClick = global::blackjack.Properties.Resources.piger_default;
-            this.FB_PigerJ1.ImageDisable = null;
-            this.FB_PigerJ1.ImageNeutral = global::blackjack.Properties.Resources.piger_click;
-            this.FB_PigerJ1.ImageOver = null;
-            this.FB_PigerJ1.Location = new System.Drawing.Point(12, 18);
-            this.FB_PigerJ1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FB_PigerJ1.Name = "FB_PigerJ1";
-            this.FB_PigerJ1.Size = new System.Drawing.Size(73, 67);
-            this.FB_PigerJ1.TabIndex = 0;
-            this.FB_PigerJ1.Click += new System.EventHandler(this.FB_PigerJ1_Click);
             // 
             // BTN_Quitter
             // 
@@ -185,7 +126,7 @@
             this.BTN_Rejouer.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Rejouer.Name = "BTN_Rejouer";
             this.BTN_Rejouer.Size = new System.Drawing.Size(69, 23);
-            this.BTN_Rejouer.TabIndex = 5;
+            this.BTN_Rejouer.TabIndex = 0;
             this.BTN_Rejouer.Text = "Rejouer";
             this.BTN_Rejouer.UseVisualStyleBackColor = true;
             this.BTN_Rejouer.Click += new System.EventHandler(this.BTN_Rejouer_Click);
@@ -251,6 +192,67 @@
             this.LB_Points_J2.Size = new System.Drawing.Size(0, 13);
             this.LB_Points_J2.TabIndex = 7;
             // 
+            // FB_PasserJ1
+            // 
+            this.FB_PasserJ1.BackgroundImage = global::blackjack.Properties.Resources.check_default;
+            this.FB_PasserJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_PasserJ1.ImageClick = global::blackjack.Properties.Resources.check_click;
+            this.FB_PasserJ1.ImageDisable = null;
+            this.FB_PasserJ1.ImageNeutral = global::blackjack.Properties.Resources.check_default;
+            this.FB_PasserJ1.ImageOver = null;
+            this.FB_PasserJ1.Location = new System.Drawing.Point(99, 18);
+            this.FB_PasserJ1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FB_PasserJ1.Name = "FB_PasserJ1";
+            this.FB_PasserJ1.Size = new System.Drawing.Size(73, 67);
+            this.FB_PasserJ1.TabIndex = 0;
+            this.FB_PasserJ1.Click += new System.EventHandler(this.FB_PasserJ1_Click);
+            // 
+            // FB_PigerJ1
+            // 
+            this.FB_PigerJ1.BackgroundImage = global::blackjack.Properties.Resources.piger_click;
+            this.FB_PigerJ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_PigerJ1.CausesValidation = false;
+            this.FB_PigerJ1.ImageClick = global::blackjack.Properties.Resources.piger_default;
+            this.FB_PigerJ1.ImageDisable = null;
+            this.FB_PigerJ1.ImageNeutral = global::blackjack.Properties.Resources.piger_click;
+            this.FB_PigerJ1.ImageOver = null;
+            this.FB_PigerJ1.Location = new System.Drawing.Point(12, 18);
+            this.FB_PigerJ1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FB_PigerJ1.Name = "FB_PigerJ1";
+            this.FB_PigerJ1.Size = new System.Drawing.Size(73, 67);
+            this.FB_PigerJ1.TabIndex = 1;
+            this.FB_PigerJ1.Click += new System.EventHandler(this.FB_PigerJ1_Click);
+            // 
+            // FB_PasserJ2
+            // 
+            this.FB_PasserJ2.BackgroundImage = global::blackjack.Properties.Resources.check_default;
+            this.FB_PasserJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_PasserJ2.ImageClick = global::blackjack.Properties.Resources.check_click;
+            this.FB_PasserJ2.ImageDisable = null;
+            this.FB_PasserJ2.ImageNeutral = global::blackjack.Properties.Resources.check_default;
+            this.FB_PasserJ2.ImageOver = null;
+            this.FB_PasserJ2.Location = new System.Drawing.Point(100, 18);
+            this.FB_PasserJ2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FB_PasserJ2.Name = "FB_PasserJ2";
+            this.FB_PasserJ2.Size = new System.Drawing.Size(73, 67);
+            this.FB_PasserJ2.TabIndex = 0;
+            this.FB_PasserJ2.Click += new System.EventHandler(this.FB_PasserJ2_Click);
+            // 
+            // FB_PigerJ2
+            // 
+            this.FB_PigerJ2.BackgroundImage = global::blackjack.Properties.Resources.piger_click;
+            this.FB_PigerJ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FB_PigerJ2.ImageClick = global::blackjack.Properties.Resources.piger_default;
+            this.FB_PigerJ2.ImageDisable = null;
+            this.FB_PigerJ2.ImageNeutral = global::blackjack.Properties.Resources.piger_click;
+            this.FB_PigerJ2.ImageOver = null;
+            this.FB_PigerJ2.Location = new System.Drawing.Point(13, 18);
+            this.FB_PigerJ2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FB_PigerJ2.Name = "FB_PigerJ2";
+            this.FB_PigerJ2.Size = new System.Drawing.Size(73, 67);
+            this.FB_PigerJ2.TabIndex = 0;
+            this.FB_PigerJ2.Click += new System.EventHandler(this.FB_PigerJ2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::blackjack.Properties.Resources.Versus;
@@ -262,11 +264,24 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // PB_Banner
+            // 
+            this.PB_Banner.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Banner.BackgroundImage = global::blackjack.Properties.Resources.bannerResultat;
+            this.PB_Banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Banner.Location = new System.Drawing.Point(-4, 106);
+            this.PB_Banner.Name = "PB_Banner";
+            this.PB_Banner.Size = new System.Drawing.Size(564, 229);
+            this.PB_Banner.TabIndex = 9;
+            this.PB_Banner.TabStop = false;
+            this.PB_Banner.Visible = false;
+            // 
             // Form_Jouer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 413);
+            this.Controls.Add(this.PB_Banner);
             this.Controls.Add(this.LB_Points_J2);
             this.Controls.Add(this.LB_Points_J1);
             this.Controls.Add(this.BTN_Annuler);
@@ -290,6 +305,7 @@
             this.GB_OptionJoueur2.ResumeLayout(false);
             this.GB_OptionJoueur1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Banner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +331,6 @@
         private FlashButton.FlashButton FB_PigerJ2;
         private FlashButton.FlashButton FB_PasserJ1;
         private FlashButton.FlashButton FB_PigerJ1;
+        private System.Windows.Forms.PictureBox PB_Banner;
     }
 }
