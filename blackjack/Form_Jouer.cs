@@ -335,7 +335,6 @@ namespace blackjack
             }
             float nombreCarteRestante = 52 - listCarteEnJeu.Count;
             float probabilite = (compteur / nombreCarteRestante) * 100;
-            leJoueur.AjouterAuJournal("Le joueur avait " + probabilite + "% de chance de ne pas dépasser 21");
             return probabilite;
         }
         private void MettreControlesJoueurIA(Joueur joueur)
@@ -355,15 +354,29 @@ namespace blackjack
         {
             if (leIA == joueur1)
                 if (CalculerProb(joueur1) >= Convert.ToInt32(leIA._niveauIA))
+                {
                     PigerCarteJ1();
+                    joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Il a pigé une carte");
+                }
+                else if(leIA._nbPoints >= 10)
+                {
+                    PigerCarteJ1();
+                    joueur1.AjouterAuJournal("Le joueur#1 avait un total de 10. Il a pigé une carte.");
+                }
                 else
                     if (!joueur2._estIA)
+                    {
                         ChangerTour(joueur2);
+                        joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
+                    }
                     else
                         JouerTourIA(joueur2);
             else if (leIA == joueur2)
                 if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
+                {
                     PigerCarteJ2();
+                    joueur1.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
+                }
                 else
                 {
                     Timer_Tour.Enabled = false;
