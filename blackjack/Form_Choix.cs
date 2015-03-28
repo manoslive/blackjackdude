@@ -76,10 +76,34 @@ namespace blackjack
 
         private void BTN_Jouer_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (ValiderRadioButtons())
+                CommencerPartie();
+            else
+                MessageBox.Show("Vous devez choisir un niveau d'IA!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private bool ValiderRadioButtons()
+        {
+            bool estValide = false;
 
+            if (RB_J1_IA.Checked)
+                if (RB_J1_Moyen.Checked || RB_J1_Prudent.Checked || RB_J1_Courageux.Checked)
+                    estValide = true;
+                else if (RB_J1_Humain.Checked)
+                    estValide = true;
+
+            if (RB_J2_IA.Checked)
+                if (RB_J2_Moyen.Checked || RB_J1_Prudent.Checked || RB_J2_Prudent.Checked)
+                    estValide = true;
+                else if (RB_J2_Humain.Checked)
+                    estValide = true;
+            return estValide;
+        }
+
+        private void CommencerPartie()
+        {
+            this.Hide();
             Form_Jouer jouer = new Form_Jouer(RB_J1_IA.Checked, J1Niveau, joueur1_EstCompter,
-                                              RB_J2_IA.Checked, J2_niveau, joueur2_EstCompter);
+                                     RB_J2_IA.Checked, J2_niveau, joueur2_EstCompter);
             jouer.callBackForm = this;
             jouer.ShowDialog();
         }
