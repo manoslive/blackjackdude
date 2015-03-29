@@ -254,6 +254,7 @@ namespace blackjack
         private void FB_PasserJ2_Click(object sender, EventArgs e)
         {
             joueur2._AFini = true;
+            joueur2.SetEstSonTour(false);
             VerfierGagnant();
         }
         private void VerfierGagnant()
