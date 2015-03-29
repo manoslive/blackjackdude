@@ -383,7 +383,7 @@ namespace blackjack
                 FB_PasserJ2.Visible = false;
             }
         }
-        private void JouerTourIA(Joueur leIA) //mettre un boucle <----------------------ici
+        private void JouerTourIA(Joueur leIA) //mettre un boucle <----------------------ici  
         {
             if (leIA == joueur1)
                 if (CalculerProb(joueur1) >= Convert.ToInt32(leIA._niveauIA))
