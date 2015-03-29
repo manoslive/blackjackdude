@@ -161,6 +161,7 @@ namespace blackjack
                 Points = Convert.ToInt32(LB_Points_J1.Text);
             LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
             listCarteEnJeu.Add(lePaquet.GetValeur());
+            VerfierGagnant();
             //ChangerTour(joueur2);
         }
         public void PigerCarteJ1()
@@ -288,8 +289,11 @@ namespace blackjack
             {
                 if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Le Joueur 1 a gagné");
-                else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) < 21)
-                    MessageBox.Show("Le Joueur 2 a gagné");
+                else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) <= 21)
+                    if (Convert.ToInt32(LB_Points_J2.Text) == 21)
+                        MessageBox.Show("Blackjack! \nLe Joueur 2 a gagné");
+                    else
+                        MessageBox.Show("Le Joueur 2 a gagné");
                 else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Partie nulle");
                 DisableButtons();
@@ -348,6 +352,8 @@ namespace blackjack
             {
                 this.Controls.Remove(listCarteJ2[i]);
             }
+            joueur1._journal.Clear();
+            joueur2._journal.Clear();
             listCarteJ1.Clear();
             listCarteJ2.Clear();
             listCarteEnJeu.Clear();
@@ -371,22 +377,24 @@ namespace blackjack
         }
         private float CalculerProb(Joueur leJoueur) // Problème ici
         {
+            float probabilite = 100;
             float nbPointsAvantBusté = (21 - Convert.ToInt32(LB_Points_J1.Text));
             float compteur = nbPointsAvantBusté*4;//4 == nombre de carte par numero
             if(nbPointsAvantBusté < 11)
             {
                 for (int i = 1; i < nbPointsAvantBusté; i++)
                 {
-                for (int j = 0; j < listCarteEnJeu.Count; j++)
-                {
-                    if (listCarteEnJeu[j] == i)
+                    for (int j = 0; j < listCarteEnJeu.Count; j++)
                     {
-                        compteur--; //nombre de carte pouvant etre pigé sans busté
+                        if (listCarteEnJeu[j] == i)
+                        {
+                            compteur--; //nombre de carte pouvant etre pigé sans busté
+                        }
                     }
                 }
+                probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
             }
-            }
-            float probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
+            
             return probabilite;
         }
         private void MettreControlesJoueurIA(Joueur joueur)
