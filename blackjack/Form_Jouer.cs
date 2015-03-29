@@ -146,7 +146,8 @@ namespace blackjack
             {
                 PigerCarteJ1();
                 Timer_Carte.Enabled = true;
-                FB_PasserJ1.Visible = true;
+                if(!joueur1._estIA)
+                    FB_PasserJ1.Visible = true;
             }
             else
                 PigerCarteJ1();
@@ -350,8 +351,10 @@ namespace blackjack
             listCarteJ1.Clear();
             listCarteJ2.Clear();
             listCarteEnJeu.Clear();
+            if(!joueur1._estIA)
+                BTN_Annuler.Visible = true;
+            
             FB_PigerJ1.Visible = true;
-            BTN_Annuler.Visible = true;
             numCarteJ1 = 0;
             numCarteJ2 = 0;
             LB_Points_J1.Text = "0";
