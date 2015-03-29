@@ -267,6 +267,7 @@ namespace blackjack
                     MessageBox.Show("Le Joueur 2 a gagné");
                 else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Partie nulle");
+                DisableButtons();
             }
             else if (joueur1.GetEstSonTour() && !joueur2.GetEstSonTour())
             {
