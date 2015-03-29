@@ -367,21 +367,21 @@ namespace blackjack
             this.Close();
         }
         private float CalculerProb(Joueur leJoueur) // Problème ici
-        {  
+        {
             float nbPointsAvantBusté = (21 - Convert.ToInt32(LB_Points_J1.Text));
             float compteur = nbPointsAvantBusté*4;//4 == nombre de carte par numero
             if(nbPointsAvantBusté < 11)
             {
                 for (int i = 1; i < nbPointsAvantBusté; i++)
                 {
-                    for (int j = 0; j < listCarteEnJeu.Count; j++)
+                for (int j = 0; j < listCarteEnJeu.Count; j++)
+                {
+                    if (listCarteEnJeu[j] == i)
                     {
-                        if (listCarteEnJeu[j] == i)
-                        {
-                            compteur--; //nombre de carte pouvant etre pigé sans busté
-                        }
+                        compteur--; //nombre de carte pouvant etre pigé sans busté
                     }
                 }
+            }
             }
             float probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
             return probabilite;
@@ -418,6 +418,7 @@ namespace blackjack
                         Timer_Tour.Enabled = false;
                         joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                         ChangerTour(joueur2);
+                        //joueur2.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     }
                     else
                         JouerTourIA(joueur2);
@@ -441,11 +442,11 @@ namespace blackjack
         }
 
         private void Timer_Tour_Tick(object sender, EventArgs e)
-        {  
+        {
             if (joueur1.GetEstSonTour())
                 JouerTourIA(joueur1);
             else
-                JouerTourIA(joueur2);
+            JouerTourIA(joueur2);
         }
 
         private void Timer_Carte_Tick(object sender, EventArgs e)
@@ -453,8 +454,8 @@ namespace blackjack
             Timer_Carte.Enabled = false;
             if (joueur1.GetEstSonTour())
                 if (!joueur1._estIA)
-                    PigerCarteJ1();
-                else
+                PigerCarteJ1();
+            else
                     Timer_Tour.Enabled = true;
             else
                 PigerCarteJ2();
