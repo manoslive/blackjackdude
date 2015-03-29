@@ -77,7 +77,7 @@ namespace blackjack
             if (joueur1._estIA)
             {
                 MettreControlesJoueurIA(joueur1);
-                JouerTourIA(joueur1);
+                IA_PigerJ1();
             }
             else
             {
@@ -127,6 +127,18 @@ namespace blackjack
                 FB_PigerJ2.Visible = true;
             }
 
+        }
+        private void IA_PigerJ1()
+        {
+            if (numCarteJ1 == 0)
+            {
+                JouerTourIA(joueur1);
+                Timer_Carte.Enabled = true;
+            }
+            else
+                JouerTourIA(joueur1);
+
+            VerfierGagnant();
         }
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
@@ -182,7 +194,19 @@ namespace blackjack
             lePaquet.RemoveCarte();
             numCarteJ1++;
         }
+        private void IA_PigerJ2()
+        {
+            if (numCarteJ2 == 0)
+            {
+                PigerCarteJ2();
+                Timer_Carte.Enabled = true;
+            }
+            else
+                PigerCarteJ2();
+            VerfierGagnant();
 
+            VerfierGagnant();
+        }
         private void FB_PigerJ2_Click(object sender, EventArgs e)
         {
             if (numCarteJ2 == 0)
@@ -343,30 +367,22 @@ namespace blackjack
             this.Close();
         }
         private float CalculerProb(Joueur leJoueur) // Problème ici
-        {
-            int compteur = lePaquet.Paquet.Count;
-
-            for (int i = 1; i < 21 - Convert.ToInt32(LB_Points_J1.Text); i++)
+        {  
+            float nbPointsAvantBusté = (21 - Convert.ToInt32(LB_Points_J1.Text));
+            float compteur = nbPointsAvantBusté*4;//4 == nombre de carte par numero
+            if(nbPointsAvantBusté < 11)
             {
-                for (int j = 0; j < listCarteEnJeu.Count; j++)
+                for (int i = 1; i < nbPointsAvantBusté; i++)
                 {
-                    if (listCarteEnJeu[j] == i)
+                    for (int j = 0; j < listCarteEnJeu.Count; j++)
                     {
-                        compteur--; //nombre de carte pouvant etre pigé sans busté
+                        if (listCarteEnJeu[j] == i)
+                        {
+                            compteur--; //nombre de carte pouvant etre pigé sans busté
+                        }
                     }
                 }
             }
-            //for (int i = 1; i <= 21 - Convert.ToInt32(LB_Points_J1.Text); i++)
-            //{
-            //    for (int j = 0; j < listCarteEnJeu.Count; j++)
-            //    {
-            //        if (listCarteEnJeu[j] == i)
-            //        {
-            //            compteur--;
-            //        }
-            //    }
-            //}
-            //float nombreCarteRestante = 52 - listCarteEnJeu.Count;
             float probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
             return probabilite;
         }
@@ -383,7 +399,7 @@ namespace blackjack
                 FB_PasserJ2.Visible = false;
             }
         }
-        private void JouerTourIA(Joueur leIA) //mettre un boucle <----------------------ici  
+        private void JouerTourIA(Joueur leIA) 
         {
             if (leIA == joueur1)
                 if (CalculerProb(joueur1) >= Convert.ToInt32(leIA._niveauIA))
@@ -391,21 +407,27 @@ namespace blackjack
                     joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Il a pigé une carte");
                     PigerCarteJ1();
                 }
-                else if (leIA._nbPoints >= 10)
-                {
-                    joueur1.AjouterAuJournal("Le joueur#1 avait un total de 10. Il a pigé une carte.");
-                    PigerCarteJ1();
-                }
+                //else if (leIA._nbPoints >= 10)
+                //{
+                //    joueur1.AjouterAuJournal("Le joueur#1 avait un total de 10. Il a pigé une carte.");
+                //    PigerCarteJ1();
+                //}
                 else
                     if (!joueur2._estIA)
                     {
+                        Timer_Tour.Enabled = false;
                         joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                         ChangerTour(joueur2);
                     }
                     else
                         JouerTourIA(joueur2);
             else if (leIA == joueur2)
-                if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
+                if (Convert.ToInt32(LB_Points_J1.Text) == 21 && Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
+                {
+                    Timer_Tour.Enabled = false;
+                    VerfierGagnant();
+                }
+                else if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
                 {
                     joueur1.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     PigerCarteJ2();
@@ -419,15 +441,21 @@ namespace blackjack
         }
 
         private void Timer_Tour_Tick(object sender, EventArgs e)
-        {
-            JouerTourIA(joueur2);
+        {  
+            if (joueur1.GetEstSonTour())
+                JouerTourIA(joueur1);
+            else
+                JouerTourIA(joueur2);
         }
 
         private void Timer_Carte_Tick(object sender, EventArgs e)
         {
             Timer_Carte.Enabled = false;
             if (joueur1.GetEstSonTour())
-                PigerCarteJ1();
+                if (!joueur1._estIA)
+                    PigerCarteJ1();
+                else
+                    Timer_Tour.Enabled = true;
             else
                 PigerCarteJ2();
         }

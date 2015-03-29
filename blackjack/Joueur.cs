@@ -10,7 +10,7 @@ namespace blackjack
     public class Joueur
     {
         // Attributs
-        public enum niveauIA { Prudent = 80, Moyen = 65, Courageux = 50, Aucun = 0 };
+        public enum niveauIA { Prudent = 80, Moyen = 50, Courageux = 30, Aucun = 0 };
         public bool _comptage { get; set; }
         public bool _estIA { get; set; }
         public niveauIA _niveauIA;
