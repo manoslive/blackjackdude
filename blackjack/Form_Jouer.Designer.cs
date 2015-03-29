@@ -48,6 +48,7 @@
             this.LB_Points_J2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Timer_Tour = new System.Windows.Forms.Timer(this.components);
+            this.Timer_Carte = new System.Windows.Forms.Timer(this.components);
             this.GB_OptionJoueur2.SuspendLayout();
             this.GB_OptionJoueur1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,6 +267,11 @@
             this.Timer_Tour.Interval = 500;
             this.Timer_Tour.Tick += new System.EventHandler(this.Timer_Tour_Tick);
             // 
+            // Timer_Carte
+            // 
+            this.Timer_Carte.Interval = 500;
+            this.Timer_Carte.Tick += new System.EventHandler(this.Timer_Carte_Tick);
+            // 
             // Form_Jouer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,5 +326,6 @@
         private FlashButton.FlashButton FB_PasserJ1;
         private FlashButton.FlashButton FB_PigerJ1;
         private System.Windows.Forms.Timer Timer_Tour;
+        private System.Windows.Forms.Timer Timer_Carte;
     }
 }

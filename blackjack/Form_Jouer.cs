@@ -128,7 +128,7 @@ namespace blackjack
             if (numCarteJ1 == 0)
             {
                 PigerCarteJ1();
-                PigerCarteJ1();
+                Timer_Carte.Enabled = true;
                 FB_PasserJ1.Visible = true;
             }
             else
@@ -143,7 +143,7 @@ namespace blackjack
                 Points = Convert.ToInt32(LB_Points_J1.Text);
             LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
             listCarteEnJeu.Add(lePaquet.GetValeur());
-            ChangerTour(joueur2);
+            //ChangerTour(joueur2);
         }
         public void PigerCarteJ1()
         {
@@ -388,6 +388,12 @@ namespace blackjack
         private void Timer_Tour_Tick(object sender, EventArgs e)
         {
             JouerTourIA(joueur2);
+        }
+
+        private void Timer_Carte_Tick(object sender, EventArgs e)
+        {
+            Timer_Carte.Enabled = false;
+            PigerCarteJ1();
         }
     }
 }
