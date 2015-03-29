@@ -44,6 +44,8 @@ namespace blackjack
                 joueur2 = new Joueur(J2niveau, J2estCompter);
                 MettreControlesJoueurIA(joueur2);
             }
+            joueur1.SetEstSonTour(true);
+            joueur2.SetEstSonTour(false);
         }
 
 
@@ -90,6 +92,8 @@ namespace blackjack
         {
             if (aQuelJoueurEstLeTour == joueur1 && aQuelJoueurEstLeTour._estIA)
             {
+                joueur1.SetEstSonTour(true);
+                joueur2.SetEstSonTour(false);
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = false;
@@ -97,6 +101,8 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
             {
+                joueur2.SetEstSonTour(true);
+                joueur1.SetEstSonTour(false);
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = false;
@@ -104,6 +110,8 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur1)
             {
+                joueur1.SetEstSonTour(true);
+                joueur2.SetEstSonTour(false);
                 FB_PigerJ1.Visible = true;
                 FB_PasserJ1.Visible = true;
                 FB_PasserJ2.Visible = false;
@@ -111,6 +119,8 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur2)
             {
+                joueur2.SetEstSonTour(true);
+                joueur1.SetEstSonTour(false);
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = true;
@@ -118,11 +128,6 @@ namespace blackjack
             }
 
         }
-        private void LB_Points_J1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
             if (numCarteJ1 == 0)
@@ -134,7 +139,7 @@ namespace blackjack
             else
                 PigerCarteJ1();
 
-            // ChangerTour(joueur2);
+            VerfierGagnant();
         }
         private void CalculerPointsJ1()
         {
@@ -183,11 +188,12 @@ namespace blackjack
             if (numCarteJ2 == 0)
             {
                 PigerCarteJ2();
-                PigerCarteJ2();
+                Timer_Carte.Enabled = true;
                 FB_PasserJ2.Visible = true;
             }
             else
                 PigerCarteJ2();
+            VerfierGagnant();
         }
         private void CalculerPointsJ2()
         {
@@ -196,7 +202,7 @@ namespace blackjack
                 Points = Convert.ToInt32(LB_Points_J2.Text);
             LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
             listCarteEnJeu.Add(lePaquet.GetValeur());
-            DisableButtons();
+            //DisableButtons();
         }
         public void PigerCarteJ2()
         {
@@ -242,7 +248,7 @@ namespace blackjack
             {
                 ChangerTour(joueur2);
                 Timer_Tour.Enabled = true;
-            }      
+            }
         }
 
         private void FB_PasserJ2_Click(object sender, EventArgs e)
@@ -252,19 +258,31 @@ namespace blackjack
         }
         private void VerfierGagnant()
         {
-            if (Convert.ToInt32(LB_Points_J1.Text) == 21)
-                MessageBox.Show("Blackjack! \nLe Joueur 1 a gagné");
-            else if (Convert.ToInt32(LB_Points_J2.Text) == 21)
-                MessageBox.Show("Blackjack! \nLe Joueur 2 a gagné");
-            else if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
-                MessageBox.Show("Le Joueur 1 a gagné");
-            else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text)<21)
-                MessageBox.Show("Le Joueur 2 a gagné");
-            else if (Convert.ToInt32(LB_Points_J2.Text) > 21)
-                MessageBox.Show("Le Joueur 2 a busté");
-            else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
-                MessageBox.Show("Partie nulle");
-            DisableButtons();
+            if (!joueur1.GetEstSonTour() && !joueur2.GetEstSonTour())
+            {
+                if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
+                    MessageBox.Show("Le Joueur 1 a gagné");
+                else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) < 21)
+                    MessageBox.Show("Le Joueur 2 a gagné");
+                else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
+                    MessageBox.Show("Partie nulle");
+            }
+            else if (joueur1.GetEstSonTour() && !joueur2.GetEstSonTour())
+            {
+                if (Convert.ToInt32(LB_Points_J1.Text) > 21)
+                {
+                    MessageBox.Show("Le Joueur 1 a busté");
+                    DisableButtons();
+                }
+            }
+            else if (!joueur1.GetEstSonTour() && joueur2.GetEstSonTour())
+            {
+                if (Convert.ToInt32(LB_Points_J2.Text) > 21)
+                {
+                    MessageBox.Show("Le Joueur 2 a busté");
+                    DisableButtons();
+                }
+            }
         }
 
         private void BTN_AfficherJournalJ2_Click(object sender, EventArgs e)
@@ -312,6 +330,8 @@ namespace blackjack
             numCarteJ2 = 0;
             LB_Points_J1.Text = "0";
             LB_Points_J2.Text = "0";
+            joueur1.SetEstSonTour(true);
+            joueur2.SetEstSonTour(false);
         }
 
         private void BTN_Annuler_Click(object sender, EventArgs e)
@@ -358,7 +378,7 @@ namespace blackjack
                     PigerCarteJ1();
                     joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Il a pigé une carte");
                 }
-                else if(leIA._nbPoints >= 10)
+                else if (leIA._nbPoints >= 10)
                 {
                     PigerCarteJ1();
                     joueur1.AjouterAuJournal("Le joueur#1 avait un total de 10. Il a pigé une carte.");
@@ -382,7 +402,7 @@ namespace blackjack
                     Timer_Tour.Enabled = false;
                     VerfierGagnant();
                 }
-                    
+
         }
 
         private void Timer_Tour_Tick(object sender, EventArgs e)
@@ -393,7 +413,10 @@ namespace blackjack
         private void Timer_Carte_Tick(object sender, EventArgs e)
         {
             Timer_Carte.Enabled = false;
-            PigerCarteJ1();
+            if (joueur1.GetEstSonTour())
+                PigerCarteJ1();
+            else
+                PigerCarteJ2();
         }
     }
 }

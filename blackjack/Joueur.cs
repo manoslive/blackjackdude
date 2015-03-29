@@ -17,6 +17,7 @@ namespace blackjack
         public int _nbPoints { get; set; }
         public bool _AFini { get; set; }
         public List<String> _journal { get; set; }
+        public bool _estSonTour { get; set; }
 
         // Constructeur sans paramètre
         public Joueur()
@@ -52,6 +53,14 @@ namespace blackjack
         {
             string message = "Mon pointage est de ";
             _journal.Add(message);
+        }
+        public bool GetEstSonTour()
+        {
+            return _estSonTour;
+        }
+        public void SetEstSonTour(bool sonTour)
+        {
+             _estSonTour = sonTour;
         }
 
     }
