@@ -387,7 +387,7 @@ namespace blackjack
                     if (!joueur2._estIA)
                     {
                         ChangerTour(joueur2);
-                        joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
+                        joueur2.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     }
                     else
                         JouerTourIA(joueur2);
