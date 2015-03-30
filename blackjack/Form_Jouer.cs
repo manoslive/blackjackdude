@@ -1,4 +1,11 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------
+/// Shaun Cooper et Emmanuel Beloin
+/// BlackJack (jeu de carte 21)
+/// Remise le 30 mars 2015
+/// Veuillez voir la fonction CalculerProb pour consulter nos calcules de propabilité
+/// Vous pouvez voir les résultats des probabilités des IA dans le jeu en appuyant sur Journal
+///------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -166,6 +173,7 @@ namespace blackjack
             }
             else
                 PigerCarteJ2();
+        }
         private void FB_PasserJ1_Click(object sender, EventArgs e)
         {
             if (numCarteJ1 < 2)
