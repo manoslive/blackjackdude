@@ -166,7 +166,6 @@ namespace blackjack
             }
             else
                 PigerCarteJ2();
-        }
         private void FB_PasserJ1_Click(object sender, EventArgs e)
         {
             if (numCarteJ1 < 2)
@@ -323,6 +322,9 @@ namespace blackjack
             {
                 if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Le Joueur 1 a gagné");
+                else if (Convert.ToInt32(LB_Points_J1.Text) == 21)
+                    MessageBox.Show("Blackjack! \nLe Joueur 1 a gagné");
+
                 else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) <= 21)
                     if (Convert.ToInt32(LB_Points_J2.Text) == 21)
                         MessageBox.Show("Blackjack! \nLe Joueur 2 a gagné");
@@ -446,7 +448,7 @@ namespace blackjack
                 }
                 else if (CalculerProb(joueur1) >= Convert.ToInt32(leIA._niveauIA))
                 {
-                    joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Il a pigé une carte");
+                    joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Il a pigé une carte.");
                     PigerCarteJ1();
                 }
                 else
