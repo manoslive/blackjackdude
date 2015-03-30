@@ -377,6 +377,7 @@ namespace blackjack
         }
         private float CalculerProb(Joueur leJoueur) // Problème ici
         {
+            const int nbCarteComplet = 52;
             float probabilite = 100;
             float nbPointsAvantBusté = (21 - Convert.ToInt32(LB_Points_J1.Text));
             float compteur = nbPointsAvantBusté * 4;//4 == nombre de carte par numero
@@ -392,9 +393,11 @@ namespace blackjack
                         }
                     }
                 }
-                probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
+                if (leJoueur._comptage)
+                    probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
+                else
+                    probabilite = (compteur / nbCarteComplet) * 100;
             }
-
             return probabilite;
         }
         private void MettreControlesJoueurIA(Joueur joueur)
