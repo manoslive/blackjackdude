@@ -332,10 +332,7 @@ namespace blackjack
                 if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Le Joueur 1 a gagné");
                 else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) <= 21)
-                    if (Convert.ToInt32(LB_Points_J2.Text) == 21)
-                        MessageBox.Show("Blackjack! \nLe Joueur 2 a gagné");
-                    else
-                        MessageBox.Show("Le Joueur 2 a gagné");
+                    MessageBox.Show("Le Joueur 2 a gagné");
                 else if (Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Partie nulle");
                 DisableButtons();
