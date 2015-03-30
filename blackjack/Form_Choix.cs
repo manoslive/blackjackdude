@@ -84,18 +84,22 @@ namespace blackjack
         private bool ValiderRadioButtons()
         {
             bool estValide = false;
+            bool estValideJ1 = false;
+            bool estValideJ2 = false;
 
             if (RB_J1_IA.Checked)
                 if (RB_J1_Moyen.Checked || RB_J1_Prudent.Checked || RB_J1_Courageux.Checked)
-                    estValide = true;
+                    estValideJ1 = true;
             if (RB_J1_Humain.Checked)
-                    estValide = true;
+                estValideJ1 = true;
 
             if (RB_J2_IA.Checked)
                 if (RB_J2_Moyen.Checked || RB_J1_Prudent.Checked || RB_J2_Prudent.Checked)
-                    estValide = true;
+                    estValideJ2 = true;
             if (RB_J2_Humain.Checked)
-                    estValide = true;
+                estValideJ2 = true;
+            if (estValideJ1 && estValideJ2)
+                estValide = true;
             return estValide;
         }
 
