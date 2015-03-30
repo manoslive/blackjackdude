@@ -378,16 +378,6 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
             {
-                if(Convert.ToInt32(LB_Points_J1.Text) > 21)
-                {
-                    joueur2.SetEstSonTour(false);
-                    joueur1.SetEstSonTour(false);
-                }
-                else
-                {
-                    joueur2.SetEstSonTour(true);
-                    joueur1.SetEstSonTour(false);
-                }
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = false;
