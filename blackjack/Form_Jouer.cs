@@ -298,6 +298,7 @@ namespace blackjack
             {
                 int pointsj1 = Convert.ToInt32(LB_Points_J1.Text) - 10;
                 LB_Points_J1.Text = pointsj1.ToString();
+                nbAsJ1 -= 1;
             }
             listCarteEnJeu.Add(lePaquet.GetValeur());
             VerfierGagnant();
@@ -315,6 +316,7 @@ namespace blackjack
             {
                 int pointsj2 = Convert.ToInt32(LB_Points_J2.Text) - 10;
                 LB_Points_J2.Text = pointsj2.ToString();
+                nbAsJ2 -= 1;
             }
                 listCarteEnJeu.Add(lePaquet.GetValeur());
             //DisableButtons();
