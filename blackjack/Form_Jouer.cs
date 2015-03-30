@@ -23,6 +23,9 @@ namespace blackjack
         public int numCarteJ2 = 0; //num de carte pigé
         List<int> listCarteEnJeu = new List<int>();
 
+        ////----------------------------------------------------------
+        //Fonctions forms, Reinitialiser
+        ////----------------------------------------------------------
         // Constructeur paramétrique
         public Form_Jouer(bool J1estIA, Joueur.niveauIA J1niveau, bool J1estCompter,
                           bool J2estIA, Joueur.niveauIA J2niveau, bool J2estCompter)
@@ -47,13 +50,6 @@ namespace blackjack
             joueur1.SetEstSonTour(true);
             joueur2.SetEstSonTour(false);
         }
-
-
-        private void BTN_Quitter_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Form_Jouer_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (nouvellePartie)
@@ -63,15 +59,6 @@ namespace blackjack
             }
             Application.Exit();
         }
-
-        private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
-        {
-            // this.Hide();
-            Form_Journal journalj1 = new Form_Journal(joueur1._journal);
-            journalj1.callBackForm = this;
-            journalj1.ShowDialog();
-        }
-
         private void Form_Jouer_Load(object sender, EventArgs e)
         {
             if (joueur1._estIA)
@@ -88,57 +75,73 @@ namespace blackjack
             }
 
         }
-        private void ChangerTour(Joueur aQuelJoueurEstLeTour)
+        private void ReinitialiserRejouer(object sender, EventArgs e)
         {
-            if (aQuelJoueurEstLeTour == joueur1 && aQuelJoueurEstLeTour._estIA)
+            DisableButtons();
+            for (int i = 0; i < listCarteJ1.Count; i++)
             {
-                joueur1.SetEstSonTour(true);
-                joueur2.SetEstSonTour(false);
-                FB_PigerJ1.Visible = false;
-                FB_PasserJ1.Visible = false;
-                FB_PasserJ2.Visible = false;
-                FB_PigerJ2.Visible = false;
+                this.Controls.Remove(listCarteJ1[i]);
             }
-            else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
+            for (int i = 0; i < listCarteJ2.Count; i++)
             {
-                joueur2.SetEstSonTour(true);
-                joueur1.SetEstSonTour(false);
-                FB_PigerJ1.Visible = false;
-                FB_PasserJ1.Visible = false;
-                FB_PasserJ2.Visible = false;
-                FB_PigerJ2.Visible = false;
+                this.Controls.Remove(listCarteJ2[i]);
             }
-            else if (aQuelJoueurEstLeTour == joueur1)
-            {
-                joueur1.SetEstSonTour(true);
-                joueur2.SetEstSonTour(false);
-                FB_PigerJ1.Visible = true;
-                FB_PasserJ1.Visible = true;
-                FB_PasserJ2.Visible = false;
-                FB_PigerJ2.Visible = false;
-            }
-            else if (aQuelJoueurEstLeTour == joueur2)
-            {
-                joueur2.SetEstSonTour(true);
-                joueur1.SetEstSonTour(false);
-                FB_PigerJ1.Visible = false;
-                FB_PasserJ1.Visible = false;
-                FB_PasserJ2.Visible = true;
-                FB_PigerJ2.Visible = true;
-            }
-
+            joueur1._journal.Clear();
+            joueur2._journal.Clear();
+            listCarteJ1.Clear();
+            listCarteJ2.Clear();
+            listCarteEnJeu.Clear();
+            BTN_Annuler.Visible = true;
+            FB_PigerJ1.Visible = true;
+            numCarteJ1 = 0;
+            numCarteJ2 = 0;
+            LB_Points_J1.Text = "0";
+            LB_Points_J2.Text = "0";
+            joueur1.SetEstSonTour(true);
+            joueur2.SetEstSonTour(false);
+            if (joueur1._estIA)
+                Form_Jouer_Load(sender, e);
         }
-        private void IA_PigerJ1()
+        ////----------------------------------------------------------
+        //Fonctions Boutons (BTN, FB)
+        ////----------------------------------------------------------
+        private void BTN_Quitter_Click(object sender, EventArgs e)
         {
-            if (numCarteJ1 == 0)
-            {
-                JouerTourIA(joueur1);
-                Timer_Carte.Enabled = true;
-            }
-            else
-                JouerTourIA(joueur1);
+            Application.Exit();
+        }
+        private void BTN_AfficherJournalJ1_Click(object sender, EventArgs e)
+        {
+            // this.Hide();
+            Form_Journal journalj1 = new Form_Journal(joueur1._journal);
+            journalj1.callBackForm = this;
+            journalj1.ShowDialog();
+        }
+        private void BTN_AfficherJournalJ2_Click(object sender, EventArgs e)
+        {
+            // this.Hide();
+            Form_Journal journalj2 = new Form_Journal(joueur1._journal);
+            journalj2.callBackForm = this;
+            journalj2.ShowDialog();
+        }
+        private void BTN_Rejouer_Click(object sender, EventArgs e)
+        {
+            ReinitialiserRejouer(sender, e);
+        }
+        private void BTN_Annuler_Click(object sender, EventArgs e)
+        {
+            nouvellePartie = true;
+            this.Hide();
+            this.Close();
+        }
+        private void DisableButtons()
+        {
+            FB_PigerJ1.Visible = false;
+            FB_PasserJ1.Visible = false;
+            FB_PigerJ2.Visible = false;
+            FB_PasserJ2.Visible = false;
 
-            VerfierGagnant();
+            //BTN_Annuler.Visible = false;
+            lePaquet = new PaquetCartes();
         }
         private void FB_PigerJ1_Click(object sender, EventArgs e)
         {
@@ -154,15 +157,52 @@ namespace blackjack
 
             VerfierGagnant();
         }
-        private void CalculerPointsJ1()
+        private void FB_PigerJ2_Click(object sender, EventArgs e)
         {
-            int Points = 0;
-            if (LB_Points_J1.Text.Length > 0)
-                Points = Convert.ToInt32(LB_Points_J1.Text);
-            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
-            listCarteEnJeu.Add(lePaquet.GetValeur());
+            if (numCarteJ2 == 0)
+            {
+                PigerCarteJ2();
+                Timer_Carte.Enabled = true;
+                FB_PasserJ2.Visible = true;
+            }
+            else
+                PigerCarteJ2();
             VerfierGagnant();
-            //ChangerTour(joueur2);
+        }
+        private void FB_PasserJ1_Click(object sender, EventArgs e)
+        {
+            if (numCarteJ1 < 2)
+                joueur1._AFini = true;
+
+            if (!joueur2._estIA)
+                ChangerTour(joueur2);
+            else
+            {
+                ChangerTour(joueur2);
+                Timer_Tour.Enabled = true;
+            }
+        }
+        private void FB_PasserJ2_Click(object sender, EventArgs e)
+        {
+            joueur2._AFini = true;
+            joueur2.SetEstSonTour(false);
+            VerfierGagnant();
+        }
+
+        ////----------------------------------------------------------
+        //Fonctions piger cartes
+        ////----------------------------------------------------------
+        private void IA_PigerJ1()
+        {
+            if (numCarteJ1 == 0)
+            {
+                JouerTourIA(joueur1);
+                Timer_Carte.Enabled = true;
+            }
+            else
+                JouerTourIA(joueur1);
+
+            VerfierGagnant();
         }
         public void PigerCarteJ1()
         {
@@ -209,27 +249,6 @@ namespace blackjack
 
             VerfierGagnant();
         }
-        private void FB_PigerJ2_Click(object sender, EventArgs e)
-        {
-            if (numCarteJ2 == 0)
-            {
-                PigerCarteJ2();
-                Timer_Carte.Enabled = true;
-                FB_PasserJ2.Visible = true;
-            }
-            else
-                PigerCarteJ2();
-            VerfierGagnant();
-        }
-        private void CalculerPointsJ2()
-        {
-            int Points = 0;
-            if (LB_Points_J2.Text.Length > 0)
-                Points = Convert.ToInt32(LB_Points_J2.Text);
-            LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
-            listCarteEnJeu.Add(lePaquet.GetValeur());
-            //DisableButtons();
-        }
         public void PigerCarteJ2()
         {
             Point locationInitial = new Point(this.Size.Width / 2 - 35, 280);
@@ -263,25 +282,27 @@ namespace blackjack
             lePaquet.RemoveCarte();
         }
 
-        private void FB_PasserJ1_Click(object sender, EventArgs e)
+        ////----------------------------------------------------------
+        //Fonctions calculer points, verifier gagnant, calculer prob
+        ////----------------------------------------------------------
+        private void CalculerPointsJ1()
         {
-            if (numCarteJ1 < 2)
-                joueur1._AFini = true;
-
-            if (!joueur2._estIA)
-                ChangerTour(joueur2);
-            else
-            {
-                ChangerTour(joueur2);
-                Timer_Tour.Enabled = true;
-            }
-        }
-
-        private void FB_PasserJ2_Click(object sender, EventArgs e)
-        {
-            joueur2._AFini = true;
-            joueur2.SetEstSonTour(false);
+            int Points = 0;
+            if (LB_Points_J1.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J1.Text);
+            LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
+            listCarteEnJeu.Add(lePaquet.GetValeur());
             VerfierGagnant();
+            //ChangerTour(joueur2);
+        }
+        private void CalculerPointsJ2()
+        {
+            int Points = 0;
+            if (LB_Points_J2.Text.Length > 0)
+                Points = Convert.ToInt32(LB_Points_J2.Text);
+            LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
+            listCarteEnJeu.Add(lePaquet.GetValeur());
+            //DisableButtons();
         }
         private void VerfierGagnant()
         {
@@ -315,62 +336,6 @@ namespace blackjack
                 }
             }
         }
-
-        private void BTN_AfficherJournalJ2_Click(object sender, EventArgs e)
-        {
-            // this.Hide();
-            Form_Journal journalj2 = new Form_Journal(joueur1._journal);
-            journalj2.callBackForm = this;
-            journalj2.ShowDialog();
-        }
-        private void DisableButtons()
-        {
-            FB_PigerJ1.Visible = false;
-            FB_PasserJ1.Visible = false;
-            FB_PigerJ2.Visible = false;
-            FB_PasserJ2.Visible = false;
-
-            //BTN_Annuler.Visible = false;
-            lePaquet = new PaquetCartes();
-        }
-        private void BTN_Rejouer_Click(object sender, EventArgs e)
-        {
-            ReinitialiserRejouer(sender,e);
-        }
-        private void ReinitialiserRejouer(object sender, EventArgs e)
-        {
-            DisableButtons();
-            for (int i = 0; i < listCarteJ1.Count; i++)
-            {
-                this.Controls.Remove(listCarteJ1[i]);
-            }
-            for (int i = 0; i < listCarteJ2.Count; i++)
-            {
-                this.Controls.Remove(listCarteJ2[i]);
-            }
-            joueur1._journal.Clear();
-            joueur2._journal.Clear();
-            listCarteJ1.Clear();
-            listCarteJ2.Clear();
-            listCarteEnJeu.Clear();
-            BTN_Annuler.Visible = true;
-            FB_PigerJ1.Visible = true;
-            numCarteJ1 = 0;
-            numCarteJ2 = 0;
-            LB_Points_J1.Text = "0";
-            LB_Points_J2.Text = "0";
-            joueur1.SetEstSonTour(true);
-            joueur2.SetEstSonTour(false);
-            if (joueur1._estIA)
-                Form_Jouer_Load(sender,e);
-        }
-
-        private void BTN_Annuler_Click(object sender, EventArgs e)
-        {
-            nouvellePartie = true;
-            this.Hide();
-            this.Close();
-        }
         private float CalculerProb(Joueur leJoueur) // Problème ici
         {
             const int nbCarteComplet = 52;
@@ -395,6 +360,50 @@ namespace blackjack
                     probabilite = (compteur / nbCarteComplet) * 100;
             }
             return probabilite;
+        }
+
+        ////----------------------------------------------------------
+        //Fonctions gérer tours
+        ////----------------------------------------------------------
+        private void ChangerTour(Joueur aQuelJoueurEstLeTour)
+        {
+            if (aQuelJoueurEstLeTour == joueur1 && aQuelJoueurEstLeTour._estIA)
+            {
+                joueur1.SetEstSonTour(true);
+                joueur2.SetEstSonTour(false);
+                FB_PigerJ1.Visible = false;
+                FB_PasserJ1.Visible = false;
+                FB_PasserJ2.Visible = false;
+                FB_PigerJ2.Visible = false;
+            }
+            else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
+            {
+                joueur2.SetEstSonTour(true);
+                joueur1.SetEstSonTour(false);
+                FB_PigerJ1.Visible = false;
+                FB_PasserJ1.Visible = false;
+                FB_PasserJ2.Visible = false;
+                FB_PigerJ2.Visible = false;
+            }
+            else if (aQuelJoueurEstLeTour == joueur1)
+            {
+                joueur1.SetEstSonTour(true);
+                joueur2.SetEstSonTour(false);
+                FB_PigerJ1.Visible = true;
+                FB_PasserJ1.Visible = true;
+                FB_PasserJ2.Visible = false;
+                FB_PigerJ2.Visible = false;
+            }
+            else if (aQuelJoueurEstLeTour == joueur2)
+            {
+                joueur2.SetEstSonTour(true);
+                joueur1.SetEstSonTour(false);
+                FB_PigerJ1.Visible = false;
+                FB_PasserJ1.Visible = false;
+                FB_PasserJ2.Visible = true;
+                FB_PigerJ2.Visible = true;
+            }
+
         }
         private void MettreControlesJoueurIA(Joueur joueur)
         {
@@ -453,9 +462,9 @@ namespace blackjack
             }
         }
 
-        ////
-        //Timers
-        ///
+        ////----------------------------------------------------------
+        //Fonctions timers
+        ////----------------------------------------------------------
         private void Timer_Tour_Tick(object sender, EventArgs e)
         {
             if (joueur1.GetEstSonTour())
