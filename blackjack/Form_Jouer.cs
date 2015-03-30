@@ -452,9 +452,18 @@ namespace blackjack
                     PigerCarteJ2();
                     VerfierGagnant();
                 }
+                else if (Convert.ToInt32(LB_Points_J2.Text) > 21)
+                {
+                    Timer_Tour.Enabled = false;
+                    joueur1.SetEstSonTour(false);
+                    joueur2.SetEstSonTour(false);
+                    VerfierGagnant();
+                }
                 else
                 {
                     Timer_Tour.Enabled = false;
+                    joueur1.SetEstSonTour(false);
+                    joueur2.SetEstSonTour(false);
                     VerfierGagnant();
                 }
             }
