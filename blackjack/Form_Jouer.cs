@@ -154,8 +154,6 @@ namespace blackjack
             }
             else
                 PigerCarteJ1();
-
-            VerfierGagnant();
         }
         private void FB_PigerJ2_Click(object sender, EventArgs e)
         {
@@ -167,7 +165,6 @@ namespace blackjack
             }
             else
                 PigerCarteJ2();
-            VerfierGagnant();
         }
         private void FB_PasserJ1_Click(object sender, EventArgs e)
         {
@@ -246,8 +243,6 @@ namespace blackjack
             else
                 PigerCarteJ2();
             VerfierGagnant();
-
-            VerfierGagnant();
         }
         public void PigerCarteJ2()
         {
@@ -302,6 +297,7 @@ namespace blackjack
                 Points = Convert.ToInt32(LB_Points_J2.Text);
             LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
             listCarteEnJeu.Add(lePaquet.GetValeur());
+            VerfierGagnant();
             //DisableButtons();
         }
         private void VerfierGagnant()
@@ -324,6 +320,9 @@ namespace blackjack
                 if (Convert.ToInt32(LB_Points_J1.Text) > 21)
                 {
                     MessageBox.Show("Le Joueur 1 a busté");
+                    joueur1.SetEstSonTour(false);
+                    joueur2.SetEstSonTour(false);
+                    Timer_Tour.Enabled = false;
                     DisableButtons();
                 }
             }
@@ -332,6 +331,8 @@ namespace blackjack
                 if (Convert.ToInt32(LB_Points_J2.Text) > 21)
                 {
                     MessageBox.Show("Le Joueur 2 a busté");
+                    joueur1.SetEstSonTour(false);
+                    joueur2.SetEstSonTour(false);
                     DisableButtons();
                 }
             }
@@ -378,6 +379,8 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
             {
+                joueur1.SetEstSonTour(false);
+                joueur2.SetEstSonTour(true);
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = false;
@@ -441,16 +444,15 @@ namespace blackjack
                         JouerTourIA(joueur2);
             else if (leIA == joueur2)
             {
-                if (Convert.ToInt32(LB_Points_J1.Text) > 21)
+                if (Convert.ToInt32(LB_Points_J2.Text) > 21)
                 {
                     Timer_Tour.Enabled = false;
-                    //VerfierGagnant();
+                    VerfierGagnant();
                 }
                 else if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
                 {
                     joueur2.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
-                    PigerCarteJ2();
-                    VerfierGagnant();
+                    IA_PigerJ2();
                 }
                 else if (Convert.ToInt32(LB_Points_J2.Text) > 21)
                 {

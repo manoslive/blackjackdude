@@ -94,10 +94,11 @@ namespace blackjack
                 estValideJ1 = true;
 
             if (RB_J2_IA.Checked)
-                if (RB_J2_Moyen.Checked || RB_J1_Prudent.Checked || RB_J2_Prudent.Checked)
+                if (RB_J2_Moyen.Checked || RB_J2_Prudent.Checked || RB_J2_Courageux.Checked)
                     estValideJ2 = true;
             if (RB_J2_Humain.Checked)
                 estValideJ2 = true;
+            
             if (estValideJ1 && estValideJ2)
                 estValide = true;
             return estValide;
