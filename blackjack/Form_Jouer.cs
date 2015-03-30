@@ -325,10 +325,6 @@ namespace blackjack
         }
         private void DisableButtons()
         {
-            //foreach (FlashButton.FlashButton x in this.Controls)
-            //{
-            //    ((FlashButton.FlashButton)x).Visible = false;
-            //}
             FB_PigerJ1.Visible = false;
             FB_PasserJ1.Visible = false;
             FB_PigerJ2.Visible = false;
