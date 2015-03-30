@@ -297,7 +297,6 @@ namespace blackjack
             }
             listCarteEnJeu.Add(lePaquet.GetValeur());
             VerfierGagnant();
-            //ChangerTour(joueur2);
         }
         private void CalculerPointsJ2()
         {
@@ -339,7 +338,6 @@ namespace blackjack
                     MessageBox.Show("Le Joueur 1 a busté");
                     joueur1.SetEstSonTour(false);
                     joueur2.SetEstSonTour(false);
-                    Timer_Tour.Enabled = false;
                     DisableButtons();
                 }
             }
@@ -461,7 +459,7 @@ namespace blackjack
                         ChangerTour(joueur2);
             else if (leIA == joueur2)
             {
-                if (Convert.ToInt32(LB_Points_J2.Text) > 21)
+                if (Convert.ToInt32(LB_Points_J1.Text) > 21)
                 {
                     Timer_Tour.Enabled = false;
                     //VerfierGagnant();
