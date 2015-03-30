@@ -22,6 +22,7 @@ namespace blackjack
         List<PictureBox> listCarteJ2 = new List<PictureBox>();
         public int numCarteJ2 = 0; //num de carte pigé
         List<int> listCarteEnJeu = new List<int>();
+        int nbAsJ1 = 0, nbAsJ2 = 0;
 
         ////----------------------------------------------------------
         //Fonctions forms, Reinitialiser
@@ -290,7 +291,14 @@ namespace blackjack
             int Points = 0;
             if (LB_Points_J1.Text.Length > 0)
                 Points = Convert.ToInt32(LB_Points_J1.Text);
+            if (lePaquet.GetValeur() == 11)
+                nbAsJ1 += 1;
             LB_Points_J1.Text = (Points + lePaquet.GetValeur()).ToString();
+            if (Convert.ToInt32(LB_Points_J1.Text) > 21 && nbAsJ1 >= 1)
+            {
+                int pointsj1 = Convert.ToInt32(LB_Points_J1.Text) - 10;
+                LB_Points_J1.Text = pointsj1.ToString();
+            }
             listCarteEnJeu.Add(lePaquet.GetValeur());
             VerfierGagnant();
             //ChangerTour(joueur2);
@@ -300,8 +308,15 @@ namespace blackjack
             int Points = 0;
             if (LB_Points_J2.Text.Length > 0)
                 Points = Convert.ToInt32(LB_Points_J2.Text);
+            if (lePaquet.GetValeur() == 11)
+                nbAsJ2 += 1;
             LB_Points_J2.Text = (Points + lePaquet.GetValeur()).ToString();
-            listCarteEnJeu.Add(lePaquet.GetValeur());
+            if (Convert.ToInt32(LB_Points_J2.Text) > 21 && nbAsJ2 >= 1)
+            {
+                int pointsj2 = Convert.ToInt32(LB_Points_J2.Text) - 10;
+                LB_Points_J2.Text = pointsj2.ToString();
+            }
+                listCarteEnJeu.Add(lePaquet.GetValeur());
             //DisableButtons();
         }
         private void VerfierGagnant()
