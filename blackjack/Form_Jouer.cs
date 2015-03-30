@@ -457,6 +457,9 @@ namespace blackjack
             }
         }
 
+        ////
+        //Timers
+        ///
         private void Timer_Tour_Tick(object sender, EventArgs e)
         {
             if (joueur1.GetEstSonTour())
