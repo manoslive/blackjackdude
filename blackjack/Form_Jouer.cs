@@ -378,8 +378,16 @@ namespace blackjack
             }
             else if (aQuelJoueurEstLeTour == joueur2 && aQuelJoueurEstLeTour._estIA)
             {
-                joueur2.SetEstSonTour(true);
-                joueur1.SetEstSonTour(false);
+                if(Convert.ToInt32(LB_Points_J1.Text) > 21)
+                {
+                    joueur2.SetEstSonTour(false);
+                    joueur1.SetEstSonTour(false);
+                }
+                else
+                {
+                    joueur2.SetEstSonTour(true);
+                    joueur1.SetEstSonTour(false);
+                }
                 FB_PigerJ1.Visible = false;
                 FB_PasserJ1.Visible = false;
                 FB_PasserJ2.Visible = false;
@@ -443,12 +451,12 @@ namespace blackjack
                         JouerTourIA(joueur2);
             else if (leIA == joueur2)
             {
-                //if (Convert.ToInt32(LB_Points_J1.Text) == 21 || Convert.ToInt32(LB_Points_J1.Text) == Convert.ToInt32(LB_Points_J2.Text))
-                //{
-                //    Timer_Tour.Enabled = false;
-                //    VerfierGagnant();
-                //}
-                /*else*/ if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
+                if (Convert.ToInt32(LB_Points_J1.Text) > 21)
+                {
+                    Timer_Tour.Enabled = false;
+                    //VerfierGagnant();
+                }
+                else if (Convert.ToInt32(LB_Points_J1.Text) >= Convert.ToInt32(LB_Points_J2.Text))
                 {
                     joueur2.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     PigerCarteJ2();
