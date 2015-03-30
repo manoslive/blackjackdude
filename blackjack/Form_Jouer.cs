@@ -103,6 +103,8 @@ namespace blackjack
             FB_PigerJ1.Visible = true;
             numCarteJ1 = 0;
             numCarteJ2 = 0;
+            nbAsJ1 = 0;
+            nbAsJ2 = 0;
             LB_Points_J1.Text = "0";
             LB_Points_J2.Text = "0";
             joueur1.SetEstSonTour(true);
@@ -329,9 +331,6 @@ namespace blackjack
             {
                 if (Convert.ToInt32(LB_Points_J1.Text) > Convert.ToInt32(LB_Points_J2.Text))
                     MessageBox.Show("Le Joueur 1 a gagné");
-                else if (Convert.ToInt32(LB_Points_J1.Text) == 21)
-                    MessageBox.Show("Blackjack! \nLe Joueur 1 a gagné");
-
                 else if (Convert.ToInt32(LB_Points_J1.Text) < Convert.ToInt32(LB_Points_J2.Text) && Convert.ToInt32(LB_Points_J2.Text) <= 21)
                     if (Convert.ToInt32(LB_Points_J2.Text) == 21)
                         MessageBox.Show("Blackjack! \nLe Joueur 2 a gagné");
@@ -362,7 +361,7 @@ namespace blackjack
                 }
             }
         }
-        private float CalculerProb(Joueur leJoueur) // Problème ici
+        private float CalculerProb(Joueur leJoueur)
         {
             const int nbCarteComplet = 52;
             float probabilite = 100;
@@ -383,7 +382,7 @@ namespace blackjack
                 if (leJoueur._comptage)
                     probabilite = (compteur / lePaquet.Paquet.Count) * 100; //probabilité de ne pas busté
                 else
-                    probabilite = (compteur / nbCarteComplet) * 100;
+                    probabilite = (compteur / nbCarteComplet) * 100; // Dans le cas où les cartes ne sont pas comptées.
             }
             return probabilite;
         }
@@ -458,15 +457,19 @@ namespace blackjack
                     PigerCarteJ1();
                 }
                 else
+                {
+                    if (CalculerProb(joueur1) > 0)
+                        joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     if (!joueur2._estIA)
                     {
                         Timer_Tour.Enabled = false;
-                        joueur1.AjouterAuJournal("Le joueur#1 avait " + CalculerProb(joueur1) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                         ChangerTour(joueur2);
-                        //joueur2.AjouterAuJournal("Le joueur#2 avait " + CalculerProb(joueur2) + "% de chance de ne pas dépasser 21. Son niveau était de " + Convert.ToInt32(leIA._niveauIA).ToString() + ". Il a donc passé son tour.");
                     }
                     else
+                    {
                         ChangerTour(joueur2);
+                    }
+                }
             else if (leIA == joueur2)
             {
                 if (Convert.ToInt32(LB_Points_J1.Text) > 21)
