@@ -2,8 +2,11 @@
 /// Shaun Cooper et Emmanuel Beloin
 /// BlackJack (jeu de carte 21)
 /// Remise le 30 mars 2015
-/// Veuillez voir la fonction CalculerProb pour consulter nos calcules de propabilité
-/// Vous pouvez voir les résultats des probabilités des IA dans le jeu en appuyant sur Journal
+/// Commentaires:
+/// -Veuillez voir la fonction CalculerProb pour consulter nos calcules de propabilité
+/// -Vous pouvez voir les résultats des probabilités des IA dans le jeu en appuyant sur Journal
+/// -On affiche pas les probabilités du IA #2, car il pige une carte jusqu'a ce qu'il puisse gagner
+/// ou bien faire une partie null si le joueur 1 a 21.
 ///------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
